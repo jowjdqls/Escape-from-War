@@ -5,12 +5,34 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
+    Animator anim;
 
     public float maxSpeed;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if(Input.GetButton("Horizontal"))
+        {
+            spriteRenderer.flipX = (Input.GetAxisRaw("Horizontal") == -1);
+        }
+
+        if(Input.GetButtonUp("Horizontal"))
+        {
+            rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
+        }
+
+        if(Mathf.Abs(rigid.velocity.x) < 0.3)
+            anim.SetBool("isWalking", false);
+        else
+            anim.SetBool("isWalking", true);
     }
 
     void FixedUpdate()
