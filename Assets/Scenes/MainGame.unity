@@ -790,6 +790,12 @@ MonoBehaviour:
   hpbar: {fileID: 1986398877}
   hugrybar: {fileID: 1464108733}
   waterbar: {fileID: 197737048}
+  maxHp: 100
+  curHp: 100
+  maxhu: 100
+  curhu: 100
+  maxWa: 100
+  curWa: 100
 --- !u!1 &958405122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,8 +1135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -513, y: 369}
-  m_SizeDelta: {x: 500, y: -16}
+  m_AnchoredPosition: {x: -513, y: 367}
+  m_SizeDelta: {x: 500, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199327068
 MonoBehaviour:
