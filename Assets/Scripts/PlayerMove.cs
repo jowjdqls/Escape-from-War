@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerMove : MonoBehaviour
     Animator anim;
 
     public float maxSpeed;
+    public GameManager gameManager;
+    public GameObject character;
 
     void Awake()
     {
@@ -44,5 +47,29 @@ public class PlayerMove : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
         else if (rigid.velocity.x < maxSpeed * -1)
             rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "End")
+        {
+            gameManager.NextStage();
+        }
+        else if(other.gameObject.tag == "EnterStation")
+        {
+            gameManager.Ontext();
+        }
+    }
+
+    public void respown()
+    {
+        rigid.velocity = Vector2.zero;
+        spriteRenderer.flipY = false;
+        transform.position = new Vector3(-5, -2.8f, 0);
+    }
+
+    public void Station()
+    {
+        character.SetActive(false);
     }
 }
