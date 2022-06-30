@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int stagePoint;
     public int stageIndex;
     public GameObject UIEnterStation;
+    public GameObject UIExitStation;
 
     
 
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         UIEnterStation.SetActive(false);
+        UIExitStation.SetActive(false);
     }
 
 
@@ -66,10 +68,17 @@ public class GameManager : MonoBehaviour
     {
         player.Station();
         UIEnterStation.SetActive(false);
+        UIExitStation.SetActive(true);
     }
 
     public void IntStationNo()
     {
         UIEnterStation.SetActive(false);
+    }
+
+    public void ExitStation()
+    {
+        player.Oncharacter();
+        UIExitStation.SetActive(false);
     }
 }

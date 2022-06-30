@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     public GameManager gameManager;
     public GameObject character;
 
+    bool onStay = false;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -21,6 +23,27 @@ public class PlayerMove : MonoBehaviour
     }
 
     void Update()
+    {
+        Move();
+
+        if(onStay && Input.GetKeyDown(KeyCode.Space))
+        {
+            gameManager.Ontext();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        float h = Input.GetAxisRaw("Horizontal");
+        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+
+        if (rigid.velocity.x > maxSpeed)
+            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+        else if (rigid.velocity.x < maxSpeed * -1)
+            rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
+    }
+
+    public void Move()
     {
         if(Input.GetButton("Horizontal"))
         {
@@ -38,26 +61,23 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("isWalking", true);
     }
 
-    void FixedUpdate()
-    {
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
-
-        if (rigid.velocity.x > maxSpeed)
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        else if (rigid.velocity.x < maxSpeed * -1)
-            rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "End")
         {
             gameManager.NextStage();
         }
-        else if(other.gameObject.tag == "EnterStation")
+        if(other.gameObject.tag == "EnterStation")
         {
-            gameManager.Ontext();
+            onStay = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "EnterStation")
+        {
+            onStay = false;
         }
     }
 
@@ -71,5 +91,10 @@ public class PlayerMove : MonoBehaviour
     public void Station()
     {
         character.SetActive(false);
+    }
+
+    public void Oncharacter()
+    {
+        character.SetActive(true);
     }
 }
