@@ -12,8 +12,11 @@ public class GameManager : MonoBehaviour
     public int stageIndex;
     public GameObject UIEnterStation;
     public GameObject UIExitStation;
-
-    
+    public GameObject UIUseCar;
+    public GameObject UIArmy;
+    public GameObject UIArmyTalk;
+    public GameObject CarObj;
+    public GameObject Armybtu;
 
     public PlayerMove player;
 
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         UIEnterStation.SetActive(false);
         UIExitStation.SetActive(false);
+        UIArmy.SetActive(false);
     }
 
 
@@ -63,10 +67,10 @@ public class GameManager : MonoBehaviour
         UIEnterStation.SetActive(true);
     }
     
-
+    //역 들어가기
     public void IntStation()
     {
-        player.Station();
+        player.offCharacter();
         UIEnterStation.SetActive(false);
         UIExitStation.SetActive(true);
     }
@@ -80,5 +84,35 @@ public class GameManager : MonoBehaviour
     {
         player.Oncharacter();
         UIExitStation.SetActive(false);
+    }
+
+    //차 들어갈 때
+    public void IntCar()
+    {
+        UIUseCar.SetActive(true);
+    }
+
+    public void IntCarYes()
+    {
+        player.offCharacter();
+        UIUseCar.SetActive(false);
+        UIArmy.SetActive(true);
+        UIArmyTalk.SetActive(true);
+        Armybtu.SetActive(true);
+    }
+
+    public void IntCarNo()
+    {
+        UIUseCar.SetActive(false);
+    }
+
+    public void IntCarYesAnswer()
+    {
+        UIUseCar.SetActive(false);
+        UIArmy.SetActive(false);
+        UIArmyTalk.SetActive(false);
+        CarObj.SetActive(false);
+        Armybtu.SetActive(false);
+        player.Oncharacter();
     }
 }

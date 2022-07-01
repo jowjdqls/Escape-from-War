@@ -16,7 +16,14 @@ public class IntroManager : MonoBehaviour
     public GameObject Text3;
     public GameObject Text4;
 
+    AudioSource audioSource;
+
     public static float StartTime;
+
+    public void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void Start()
     {
@@ -51,6 +58,8 @@ public class IntroManager : MonoBehaviour
 
             Intro3.SetActive(true);
             Text3.SetActive(true);
+
+            audioSource.Play();
         }
         if(StartTime <= 11)
         {
