@@ -9,6 +9,9 @@ TagManager:
   - Car
   - misile
   - EnterParking
+  - EnterTent
+  - Enemy
+  - EnterHospital
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - Airplane
   - misile
-  - 
+  - Enemy
   - 
   - 
   - 

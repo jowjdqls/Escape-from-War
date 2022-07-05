@@ -16,13 +16,29 @@ public class IntroManager : MonoBehaviour
     public GameObject Text3;
     public GameObject Text4;
 
+    public AudioClip Sound;
+
     AudioSource audioSource;
 
     public static float StartTime;
 
+    enum EmergencySound
+    {
+        Openning
+    }
+
     public void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    void PlaySound(EmergencySound action)
+    {
+        switch(action)
+        {
+            case EmergencySound.Openning : audioSource.clip = Sound;
+                break;
+        }
     }
 
     public void Start()
@@ -59,7 +75,7 @@ public class IntroManager : MonoBehaviour
             Intro3.SetActive(true);
             Text3.SetActive(true);
 
-            audioSource.Play();
+            PlaySound(EmergencySound.Openning);
         }
         if(StartTime <= 11)
         {
