@@ -29,6 +29,10 @@ public class PlayerMove : MonoBehaviour
     public float Gettent = 1;
     public float HealTent = 0;
 
+    public float Attackenemy = 1;
+
+    public float boxcount = 1;
+
     public float GetHospital = 1;
     public float HospitalP = 1;
     public float HospitalPHeal = 0;
@@ -37,6 +41,7 @@ public class PlayerMove : MonoBehaviour
     bool onCar = false;
     bool OnTent = false;
     bool OnHospital = false;
+    bool OnBox = false;
 
     void Awake()
     {
@@ -99,6 +104,14 @@ public class PlayerMove : MonoBehaviour
             StopPlayer();
         }
 
+        if(OnBox && Input.GetKeyDown(KeyCode.Space))
+        {
+            gameManager.OnBoxText();
+            gameManager.StopGameTime();
+            StopPlayer();
+        }
+
+        DonotAttack();
         HpManager();
         Die();
         HandleHp();
@@ -161,6 +174,10 @@ public class PlayerMove : MonoBehaviour
         {
             OnHospital = true;
         }
+        if(other.gameObject.tag == "Boxes")
+        {
+            OnBox = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) 
@@ -181,6 +198,10 @@ public class PlayerMove : MonoBehaviour
         {
             OnHospital = false;
         }
+        if(other.gameObject.tag == "Boxes")
+        {
+            OnBox = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
@@ -190,7 +211,7 @@ public class PlayerMove : MonoBehaviour
             Damagemisile();
             Destroy(other.gameObject);
         }
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Enemy" && Attackenemy == 1)
         {
             DamageEnemy();
             Destroy(other.gameObject);
@@ -212,6 +233,32 @@ public class PlayerMove : MonoBehaviour
     public void StartPlayer()
     {
         gameObject.GetComponent<PlayerMove>().enabled = true;
+    }
+
+    public void noPlayer()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        maxSpeed = 0;
+        Attackenemy -= 1;
+    }
+
+    public void yesPlayer()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        maxSpeed = 5;
+        Attackenemy += 1;
+    }
+
+    public void DonotAttack()
+    {
+        if(Attackenemy == 0)
+        {
+            Physics2D.IgnoreLayerCollision(10,11);
+        }
+        else if(Attackenemy == 1)
+        {
+            Physics2D.IgnoreLayerCollision(10,11, false);
+        }
     }
 
     public void offCharacter()
@@ -303,11 +350,11 @@ public class PlayerMove : MonoBehaviour
     {
         if(curhu >= 75)
         {
-            curhu -= 0.008f;
+            curhu -= 0.006f;
         }
         else if(curhu >= 50)
         {
-            curhu -= 0.01f;
+            curhu -= 0.009f;
         }
         else if(curhu >= 25)
         {
@@ -315,16 +362,16 @@ public class PlayerMove : MonoBehaviour
         }
         else if(curhu >= 0)
         {
-            curhu -= 0.015f;
+            curhu -= 0.013f;
         }
         
         if(curWa >= 75)
         {
-            curWa -= 0.008f;
+            curWa -= 0.006f;
         }
         else if(curWa >= 50)
         {
-            curWa -= 0.01f;
+            curWa -= 0.009f;
         }
         else if(curWa >= 25)
         {
@@ -332,7 +379,7 @@ public class PlayerMove : MonoBehaviour
         }
         else if(curWa >= 0)
         {
-            curWa -= 0.015f;
+            curWa -= 0.013f;
         }
 
         if(50 >= curhu && curWa >= 25)
@@ -345,7 +392,7 @@ public class PlayerMove : MonoBehaviour
         }
         else if(curhu <= 0 && curWa <=0)
         {
-            curHp -= 0.012f;
+            curHp -= 0.01f;
         }
     }
 }

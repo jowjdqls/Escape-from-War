@@ -12,6 +12,7 @@ TagManager:
   - EnterTent
   - Enemy
   - EnterHospital
+  - Boxes
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Airplane
   - misile
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

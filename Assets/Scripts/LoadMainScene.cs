@@ -7,11 +7,55 @@ using UnityEngine.SceneManagement;
 public class LoadMainScene : MonoBehaviour
 {
     public GameObject UIBackGround;
-    public GameObject UIBackGround2;
-    public GameObject UIBackGround3;
+    public GameObject UIImagefirst;
+    public GameObject UIImageSecond;
+    public GameObject UIcloseBtu;
+    public GameObject UInextBtu;
+    public GameObject UIbackBtu;
 
-    float Time;
-    float checkTime;
+    public void Start()
+    {
+        UIBackGround.SetActive(false);
+        UIImagefirst.SetActive(false);
+        UIImageSecond.SetActive(false);
+        UInextBtu.SetActive(false);
+        UIbackBtu.SetActive(false);
+        UIcloseBtu.SetActive(false);
+    }
+
+    public void help()
+    {
+        UIBackGround.SetActive(true);
+        UIImagefirst.SetActive(true);
+        UInextBtu.SetActive(true);
+        UIcloseBtu.SetActive(true);
+    }
+
+    public void closehelp()
+    {
+        UIImagefirst.SetActive(false);
+        UIBackGround.SetActive(false);
+        UIImageSecond.SetActive(false);
+        UInextBtu.SetActive(false);
+        UIbackBtu.SetActive(false);
+        UIcloseBtu.SetActive(false);
+    }
+
+    public void nexthelp()
+    {
+        UIImageSecond.SetActive(true);
+        UInextBtu.SetActive(false);
+        UIbackBtu.SetActive(true);
+        UIImagefirst.SetActive(false);
+    }
+
+    public void backhelp()
+    {
+        UIImageSecond.SetActive(false);
+        UInextBtu.SetActive(true);
+        UIbackBtu.SetActive(false);
+        UIImagefirst.SetActive(true);
+    }
 
     public void Load()
     {
@@ -30,55 +74,6 @@ public class LoadMainScene : MonoBehaviour
 
     public void Update()
     {
-        invokebackRe();
-    }
-
-    public void invokebackRe()
-    {
-        InvokeRepeating("invokeback", 1f, 1f);
-    }
-
-    public void invokeback()
-    {
-        InvokeRepeating("ChangeBack", 5f, 5f);
-        Invoke("InvokeCancle", 10f);
-        InvokeRepeating("ChangeBack2", 10f, 5f);
-        Invoke("InvokeCancle2", 15f);
-        InvokeRepeating("ChangeBack3", 15f, 5f);
-        Invoke("InvokeCancle3", 20f);
-    }
-
-    public void ChangeBack()
-    {
-        UIBackGround.SetActive(false);
-        UIBackGround2.SetActive(true);
-        UIBackGround3.SetActive(false);
-    }
-
-    public void ChangeBack2()
-    {
-        UIBackGround.SetActive(false);
-        UIBackGround2.SetActive(false);
-        UIBackGround3.SetActive(true);
-    }
-
-    public void ChangeBack3()
-    {
-        UIBackGround.SetActive(true);
-        UIBackGround2.SetActive(false);
-        UIBackGround3.SetActive(false);
-    }
-
-    private void InvokeCancle()
-    {
-        CancelInvoke("ChangeBack");
-    }
-    private void InvokeCancle2()
-    {
-        CancelInvoke("ChangeBack2");
-    }
-    private void InvokeCancle3()
-    {
-        CancelInvoke("ChangeBack3");
-    }
+        
+    } 
 }

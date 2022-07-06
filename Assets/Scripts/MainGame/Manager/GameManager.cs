@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject UIHospitalEnter;
     public GameObject UIHospitalNoEnt;
 
+    public GameObject UIBoxText;
+    public GameObject UIoutBox;
+
     public GameObject UIUseCar;
     public GameObject UIArmy;
     public GameObject UIArmyTalk;
@@ -79,6 +82,18 @@ public class GameManager : MonoBehaviour
         {
             Destroy(misile.gameObject);   
         }
+
+        var enemys = FindObjectsOfType<EnemyMove>();
+        foreach (var EnemyMove in enemys)
+        {
+            Destroy(EnemyMove.gameObject);
+        }
+
+        var builds = FindObjectsOfType<build>();
+        foreach (var build in builds)
+        {
+            Destroy(build.gameObject);
+        }
         Destroy(GameObject.Find("airplane(Clone)")); 
         Destroy(GameObject.Find("airplaneHard(Clone)")); 
     }
@@ -103,6 +118,34 @@ public class GameManager : MonoBehaviour
         UIEnterStation.SetActive(true);
     }
 
+    //박스
+    public void OnBoxText()
+    {
+        UIBoxText.SetActive(true);
+    }
+
+    public void OnBoxYes()
+    {
+        player.noPlayer();
+        UIBoxText.SetActive(false);
+        UIoutBox.SetActive(true);
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void OnBoxNo()
+    {
+        UIBoxText.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void OutBox()
+    {
+        UIoutBox.SetActive(false);
+        player.yesPlayer();
+    }
+
     //배식 텍스트
     public void OnTenttext()
     {
@@ -124,8 +167,8 @@ public class GameManager : MonoBehaviour
     public void OnTentYes()
     {
         UITentText.SetActive(false);
-        player.curhu += 40;
-        player.curWa += 40;
+        player.curhu += 50;
+        player.curWa += 50;
         StartGameTime();
         player.StartPlayer();
         player.Gettent -= 1;
@@ -161,7 +204,7 @@ public class GameManager : MonoBehaviour
         UIHospitalEnter.SetActive(false);
         StartGameTime();
         player.StartPlayer();
-        player.curHp += 50;
+        player.curHp += 70;
         player.HospitalP -= 1;
     }
     
@@ -204,6 +247,8 @@ public class GameManager : MonoBehaviour
     public void ExitStation()
     {
         player.Oncharacter();
+        StartGameTime();
+        player.StartPlayer();
         UIExitStation.SetActive(false);
     }
 
