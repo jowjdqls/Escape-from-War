@@ -26,7 +26,7 @@ public class airplaneSpawner : MonoBehaviour
 
             currentTime = 0;
 
-            Destroy(airplane, 30.0f);
+            Destroy(airplane, 15.0f);
         }
     }
 }

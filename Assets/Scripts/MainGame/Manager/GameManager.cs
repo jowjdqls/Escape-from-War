@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public GameObject UIBoxText;
     public GameObject UIoutBox;
 
+    public GameObject UIesctext;
+
     public GameObject UIUseCar;
     public GameObject UIArmy;
     public GameObject UIArmyTalk;
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         UIEnterStation.SetActive(false);
         UIExitStation.SetActive(false);
         UIArmy.SetActive(false);
+        UIesctext.SetActive(false);
     }
 
 
@@ -52,7 +55,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIesctext.SetActive(true);
+            StopGameTime();
+            player.StopPlayer();
+        }
     }
 
     public void NextStage()
@@ -110,6 +118,32 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         StopGame = false;
         return;
+    }
+
+    public void escX()
+    {
+        UIesctext.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void escMenu()
+    {
+        SceneManager.LoadScene("IntScene");
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void escRePlay()
+    {
+        SceneManager.LoadScene("MainGame");
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void escQuit()
+    {
+        Application.Quit();
     }
 
     //역 들어가기 텍스트

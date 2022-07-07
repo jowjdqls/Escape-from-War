@@ -110,7 +110,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8c0882f78a6a9ed4eb0cc5d11fe656f9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.005
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -238,5 +238,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   misilefactory: {fileID: 9055797348656823224, guid: f7395a3c322706a42a8635a956055b46, type: 3}
-  minCreateTime: 0.4
-  maxcreateTime: 0.7
+  minCreateTime: 0.2
+  maxcreateTime: 0.4
