@@ -43,16 +43,11 @@ public class GameManager : MonoBehaviour
         UIesctext.SetActive(false);
     }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         StopGame = false;
     }
 
-    
-
-    // Update is called once per frame
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))

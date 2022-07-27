@@ -19,7 +19,5 @@ public class FadeIn : MonoBehaviour
             this.gameObject.SetActive(false);
         }
         time += Time.deltaTime;
-    }
-
-    
+    }  
 }

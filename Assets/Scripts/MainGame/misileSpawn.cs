@@ -9,13 +9,12 @@ public class misileSpawn : MonoBehaviour
     public float maxcreateTime = 3;
     float currentTime;
     float createTime;
-    // Start is called before the first frame update
+
     void Start()
     {
         createTime = Random.Range(minCreateTime, maxcreateTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;

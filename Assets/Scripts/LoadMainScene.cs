@@ -71,9 +71,4 @@ public class LoadMainScene : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void Update()
-    {
-        
-    } 
 }

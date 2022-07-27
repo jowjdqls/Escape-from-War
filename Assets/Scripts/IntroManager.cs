@@ -90,4 +90,24 @@ public class IntroManager : MonoBehaviour
             SceneManager.LoadScene("MainGame");
         }
     }
+
+    public void skip1()
+    {
+        StartTime = 17; 
+    }
+
+    public void skip2()
+    {
+        StartTime = 14;
+    }
+
+    public void skip3()
+    {
+        StartTime = 11;
+    }
+
+    public void skip4()
+    {
+        StartTime = 7;
+    }
 }
