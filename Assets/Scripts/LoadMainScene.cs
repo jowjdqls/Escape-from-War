@@ -67,6 +67,11 @@ public class LoadMainScene : MonoBehaviour
         SceneManager.LoadScene("MainGame");
     }
 
+    public void achievScene()
+    {
+        SceneManager.LoadScene("Achievment");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

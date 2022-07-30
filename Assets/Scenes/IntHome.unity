@@ -133,9 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 46411943}
   - component: {fileID: 46411942}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: water
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,9 +215,9 @@ GameObject:
   m_Component:
   - component: {fileID: 64097979}
   - component: {fileID: 64097978}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: soliderfood
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,9 +347,9 @@ GameObject:
   m_Component:
   - component: {fileID: 402780501}
   - component: {fileID: 402780500}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: firestick
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,9 +429,9 @@ GameObject:
   m_Component:
   - component: {fileID: 479309531}
   - component: {fileID: 479309530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bandage
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,9 +511,9 @@ GameObject:
   m_Component:
   - component: {fileID: 536018068}
   - component: {fileID: 536018067}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: chopstick
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -676,9 +676,9 @@ GameObject:
   m_Component:
   - component: {fileID: 722157214}
   - component: {fileID: 722157213}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: scissors
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,9 +758,9 @@ GameObject:
   m_Component:
   - component: {fileID: 786476520}
   - component: {fileID: 786476519}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: carkey
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,9 +840,9 @@ GameObject:
   m_Component:
   - component: {fileID: 800191330}
   - component: {fileID: 800191329}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tent
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -922,9 +922,9 @@ GameObject:
   m_Component:
   - component: {fileID: 814031370}
   - component: {fileID: 814031369}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rope
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,9 +1004,9 @@ GameObject:
   m_Component:
   - component: {fileID: 819981028}
   - component: {fileID: 819981027}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: clothes
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,9 +1086,9 @@ GameObject:
   m_Component:
   - component: {fileID: 829193566}
   - component: {fileID: 829193565}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lamen
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,9 +1168,9 @@ GameObject:
   m_Component:
   - component: {fileID: 923367747}
   - component: {fileID: 923367746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: medicne
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,9 +1250,9 @@ GameObject:
   m_Component:
   - component: {fileID: 959683274}
   - component: {fileID: 959683273}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lighter
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1332,9 +1332,9 @@ GameObject:
   m_Component:
   - component: {fileID: 985295349}
   - component: {fileID: 985295348}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tomato
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1414,9 +1414,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1017906655}
   - component: {fileID: 1017906654}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bag
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1496,9 +1496,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1102516742}
   - component: {fileID: 1102516741}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: care
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1578,9 +1578,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1120731085}
   - component: {fileID: 1120731084}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wallet
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,9 +1660,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1432783224}
   - component: {fileID: 1432783223}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: health
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1742,9 +1742,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1608063482}
   - component: {fileID: 1608063481}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: handlight
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1824,9 +1824,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1614060732}
   - component: {fileID: 1614060731}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ladio
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

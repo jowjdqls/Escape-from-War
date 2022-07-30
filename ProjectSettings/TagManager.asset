@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - EnterHospital
   - Boxes
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - misile
   - Enemy
   - Player
-  - 
+  - Item
   - 
   - 
   - 
