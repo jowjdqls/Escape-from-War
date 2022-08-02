@@ -216,6 +216,10 @@ public class PlayerMove : MonoBehaviour
             DamageEnemy();
             Destroy(other.gameObject);
         }
+        if(other.gameObject.tag == "EnterHome")
+        {
+            SceneManager.LoadScene("IntHome");
+        }
     }
 
     public void respown()

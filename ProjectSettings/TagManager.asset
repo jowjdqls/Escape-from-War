@@ -14,6 +14,7 @@ TagManager:
   - EnterHospital
   - Boxes
   - Item
+  - EnterHome
   layers:
   - Default
   - TransparentFX

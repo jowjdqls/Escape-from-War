@@ -1775,7 +1775,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC804\uC2DC \uC0C1\uD669\uC5D0\uC120 \uC8FC\uC694 \uD0DC\uD615\uBCD1\uC6D0\uC740
+  m_Text: "\uC804\uC2DC \uC0C1\uD669\uC5D0\uC120 \uC8FC\uC694 \uB300\uD615\uBCD1\uC6D0\uC740
     \uAD70\uBCD1\uC6D0\uC73C\uB85C \uBC14\uB00C\uC5B4 \uBD80\uC0C1 \uAD70\uC778 \uCE58\uB8CC\uB97C
     \uB2F4\uB2F9\uD569\uB2C8\uB2E4. \uBBFC\uAC04\uC778 \uB300\uC0C1 \uCE58\uB8CC
     \uBCD1\uC6D0\uC740 \uC804\uAD6D 800\uC5EC\uACF3\uC73C\uB85C \uC9C0\uC815\uB3FC
@@ -12227,7 +12227,7 @@ GameObject:
   - component: {fileID: 2147256348}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: EnterHome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12317,7 +12317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147256347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: -51.55, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 111045274}
