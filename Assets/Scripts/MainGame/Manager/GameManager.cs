@@ -314,4 +314,11 @@ public class GameManager : MonoBehaviour
         Armybtu.SetActive(false);
         player.Oncharacter();
     }
+
+    public void Escbtu()
+    {
+        UIesctext.SetActive(true);
+        StopGameTime();
+        player.StopPlayer();
+    }
 }

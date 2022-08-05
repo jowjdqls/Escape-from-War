@@ -15,6 +15,7 @@ TagManager:
   - Boxes
   - Item
   - EnterHome
+  - ExistHome
   layers:
   - Default
   - TransparentFX
