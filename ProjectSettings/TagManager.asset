@@ -13,9 +13,9 @@ TagManager:
   - Enemy
   - EnterHospital
   - Boxes
-  - Item
   - EnterHome
   - ExistHome
+  - FieldItem
   layers:
   - Default
   - TransparentFX
