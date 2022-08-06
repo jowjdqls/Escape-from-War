@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+    public InventoryUI invenUI;
+
     private int slotCnt;
     public int SlotCnt
     {
@@ -60,7 +62,14 @@ public class Inventory : MonoBehaviour
         {
             FieldItems fieldItems = collision.GetComponent<FieldItems>();
             if(AddItem(fieldItems.GetItem()))
-                fieldItems.DestroyItem();
+            fieldItems.DestroyItem();
+        }
+        if(collision.CompareTag("Bag"))
+        {
+            FieldItems fieldItems = collision.GetComponent<FieldItems>();
+            if(AddItem(fieldItems.GetItem()))
+            fieldItems.DestroyItem();
+            invenUI.addslot();
         }
     }
 }

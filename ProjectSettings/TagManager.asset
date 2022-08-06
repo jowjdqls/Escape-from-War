@@ -16,6 +16,7 @@ TagManager:
   - EnterHome
   - ExistHome
   - FieldItem
+  - Bag
   layers:
   - Default
   - TransparentFX
