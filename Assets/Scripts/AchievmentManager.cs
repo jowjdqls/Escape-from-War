@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AchievmentManager : MonoBehaviour
 {
@@ -26,22 +27,22 @@ public class AchievmentManager : MonoBehaviour
     public GameObject AchievUI9;
     public GameObject AchievUI10;
 
-    public static AchievmentManager instance;
+    public static Action AchM;
 
-    public int one = 0;
-    public int two = 0;
-    public int three = 0;
-    public int four = 0;
-    public int five = 0;
-    public int six = 0;
-    public int seven = 0;
-    public int eghit = 0;
-    public int nine = 0;
-    public int ten = 0;
+    public static int one = PlayerPrefs.GetInt("one", 0);
+    public int two = PlayerPrefs.GetInt("two", 0);
+    public int three = PlayerPrefs.GetInt("three", 0);
+    public int four = PlayerPrefs.GetInt("four", 0);
+    public int five = PlayerPrefs.GetInt("five", 0);
+    public int six = PlayerPrefs.GetInt("six", 0);
+    public int seven = PlayerPrefs.GetInt("seven", 0);
+    public int eghit = PlayerPrefs.GetInt("eghit", 0);
+    public int nine = PlayerPrefs.GetInt("nine", 0);
+    public int ten = PlayerPrefs.GetInt("ten", 0);
 
-    public void Awake()
+    private void Awake()
     {
-        instance = this;
+        AchM = () => { OneUp(); };
     }
 
     public void OneUp()
@@ -49,15 +50,20 @@ public class AchievmentManager : MonoBehaviour
         if(one == 0)
         {
             one++;
+            PlayerPrefs.SetInt("OneAch", one);
+            PlayerPrefs.Save();
         }
         else if(one == 1)
         {
             one = 1;
         }
+        Debug.Log("aaaaaaaaa");
     }
 
     public void Update()
     {
+        //PlayerPrefs.GetInt("One");
+
         if(one == 1)
         {
             LockedUI1.SetActive(false);
