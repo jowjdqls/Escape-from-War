@@ -296,6 +296,7 @@ public class GameManager : MonoBehaviour
         Armybtu.SetActive(true);
         StartGameTime();
         player.StartPlayer();
+        //AchievmentManager.instance.OneUp();
     }
 
     public void IntCarNo()
