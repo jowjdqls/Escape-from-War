@@ -22,6 +22,8 @@ public class IntroManager : MonoBehaviour
 
     public static float StartTime;
 
+    public static int FirstPlay = 1;
+
     enum EmergencySound
     {
         Openning
@@ -54,6 +56,8 @@ public class IntroManager : MonoBehaviour
         Text4.SetActive(false);
 
         StartTime = 20.0f;
+
+        FirstPlay = PlayerPrefs.GetInt("FirstP");
     }
 
     public void Update()
@@ -87,6 +91,9 @@ public class IntroManager : MonoBehaviour
         }
         if(StartTime <= 7)
         {
+            FirstPlay --;
+            PlayerPrefs.SetInt("FirstP", FirstPlay);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("MainGame");
         }
     }

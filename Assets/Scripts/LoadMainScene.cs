@@ -60,6 +60,14 @@ public class LoadMainScene : MonoBehaviour
     public void Load()
     {
         SceneManager.LoadScene("IntroScene");
+        if(IntroManager.FirstPlay == 1)
+        {
+            SceneManager.LoadScene("IntroScene");
+        }
+        else if(IntroManager.FirstPlay <= 0)
+        {
+            SceneManager.LoadScene("MainGame");
+        }
     }
 
     public void MainScene()
