@@ -27,43 +27,33 @@ public class AchievmentManager : MonoBehaviour
     public GameObject AchievUI9;
     public GameObject AchievUI10;
 
-    public static Action AchM;
+    public static int one = 0;
+    public static int two = 0;
+    public static int three = 0;
+    public static int four = 0;
+    public static int five = 0;
+    public static int six = 0;
+    public static int seven = 0;
+    public static int eghit = 0;
+    public static int nine = 0;
+    public static int ten = 0;
 
-    public static int one = PlayerPrefs.GetInt("one", 0);
-    public int two = PlayerPrefs.GetInt("two", 0);
-    public int three = PlayerPrefs.GetInt("three", 0);
-    public int four = PlayerPrefs.GetInt("four", 0);
-    public int five = PlayerPrefs.GetInt("five", 0);
-    public int six = PlayerPrefs.GetInt("six", 0);
-    public int seven = PlayerPrefs.GetInt("seven", 0);
-    public int eghit = PlayerPrefs.GetInt("eghit", 0);
-    public int nine = PlayerPrefs.GetInt("nine", 0);
-    public int ten = PlayerPrefs.GetInt("ten", 0);
-
-    private void Awake()
+    public void Start()
     {
-        AchM = () => { OneUp(); };
-    }
-
-    public void OneUp()
-    {
-        if(one == 0)
-        {
-            one++;
-            PlayerPrefs.SetInt("OneAch", one);
-            PlayerPrefs.Save();
-        }
-        else if(one == 1)
-        {
-            one = 1;
-        }
-        Debug.Log("aaaaaaaaa");
+        one = PlayerPrefs.GetInt("OneAch");
+        two = PlayerPrefs.GetInt("TwoAch");
+        three = PlayerPrefs.GetInt("ThreeAch");
+        four = PlayerPrefs.GetInt("FourAch");
+        five = PlayerPrefs.GetInt("FiveAch");
+        six = PlayerPrefs.GetInt("SixAch");
+        seven = PlayerPrefs.GetInt("SevenAch");
+        eghit = PlayerPrefs.GetInt("EghitAch");
+        nine = PlayerPrefs.GetInt("NineAch");
+        ten = PlayerPrefs.GetInt("TenAch");
     }
 
     public void Update()
     {
-        //PlayerPrefs.GetInt("One");
-
         if(one == 1)
         {
             LockedUI1.SetActive(false);

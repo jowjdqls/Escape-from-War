@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class achivbtuManager : MonoBehaviour
 {
@@ -26,4 +28,8 @@ public class achivbtuManager : MonoBehaviour
         ExUI.SetActive(false);
     }
 
+    public void BackMain()
+    {
+        SceneManager.LoadScene("IntScene");
+    }
 }

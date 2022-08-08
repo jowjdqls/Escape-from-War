@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StopGame = false;
+        AchievmentManager.one = PlayerPrefs.GetInt("OneAch");
+        AchievmentManager.two = PlayerPrefs.GetInt("TwoAch");
     }
 
     private void Update()
@@ -235,6 +237,16 @@ public class GameManager : MonoBehaviour
         player.StartPlayer();
         player.curHp += 70;
         player.HospitalP -= 1;
+        if(AchievmentManager.two == 0)
+        {
+            AchievmentManager.two ++;
+            PlayerPrefs.SetInt("TwoAch", AchievmentManager.two);
+            PlayerPrefs.Save();
+        }
+        else if(AchievmentManager.two == 1)
+        {
+            AchievmentManager.two = 1;
+        }
     }
     
     public void OnHospitalEntNo()
@@ -296,8 +308,16 @@ public class GameManager : MonoBehaviour
         Armybtu.SetActive(true);
         StartGameTime();
         player.StartPlayer();
-        //AchievmentManager.instance.OneUp();
-        AchievmentManager.OneUp();
+        if(AchievmentManager.one == 0)
+        {
+            AchievmentManager.one++;
+            PlayerPrefs.SetInt("OneAch", AchievmentManager.one);
+            PlayerPrefs.Save();
+        }
+        else if (AchievmentManager.one == 1)
+        {
+            AchievmentManager.one = 1;
+        }
     }
 
     public void IntCarNo()
