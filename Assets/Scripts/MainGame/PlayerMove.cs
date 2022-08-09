@@ -123,7 +123,9 @@ public class PlayerMove : MonoBehaviour
 
         if(OnMart && Input.GetKeyDown(KeyCode.Space))
         {
-
+            gameManager.IntMart();
+            gameManager.StopGameTime();
+            StopPlayer();
         }
 
         DonotAttack();

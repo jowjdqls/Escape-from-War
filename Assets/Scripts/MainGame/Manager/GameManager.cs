@@ -348,6 +348,7 @@ public class GameManager : MonoBehaviour
         player.StopPlayer();
     }
 
+    //약국 들어가기
     public void IntPharmacy()
     {
         pharmacyText.SetActive(true);
@@ -355,6 +356,28 @@ public class GameManager : MonoBehaviour
 
     public void IntPharmacyYes()
     {
+        pharmacyText.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
 
+    public void IntPharmacyNo()
+    {
+
+    }
+
+    public void IntMart()
+    {
+        MartText.SetActive(true);
+    }
+
+    public void IntMartYes()
+    {
+
+    }
+
+    public void IntMartNo()
+    {
+        
     }
 }
