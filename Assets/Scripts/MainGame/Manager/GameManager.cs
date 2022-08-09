@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
     public GameObject CarObj;
     public GameObject Armybtu;
 
+    public GameObject MartText;
+
+    public GameObject pharmacyText;
+
     public PlayerMove player;
 
     public static bool StopGame;
@@ -342,5 +346,15 @@ public class GameManager : MonoBehaviour
         UIesctext.SetActive(true);
         StopGameTime();
         player.StopPlayer();
+    }
+
+    public void IntPharmacy()
+    {
+        pharmacyText.SetActive(true);
+    }
+
+    public void IntPharmacyYes()
+    {
+
     }
 }

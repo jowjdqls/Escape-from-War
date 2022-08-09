@@ -8,7 +8,7 @@ public class buildSpawn : MonoBehaviour
 
     void Start()
     {
-        var a = Random.Range(0,4); 
+        var a = Random.Range(0,6); 
         Instantiate(buildObj[a], transform.position, Quaternion.identity);
     }
 }

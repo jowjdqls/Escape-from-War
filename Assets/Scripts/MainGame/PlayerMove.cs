@@ -42,6 +42,8 @@ public class PlayerMove : MonoBehaviour
     bool OnTent = false;
     bool OnHospital = false;
     bool OnBox = false;
+    bool Onpharmacy = false;
+    bool OnMart = false;
 
     void Awake()
     {
@@ -111,6 +113,19 @@ public class PlayerMove : MonoBehaviour
             StopPlayer();
         }
 
+        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        if(Onpharmacy && Input.GetKeyDown(KeyCode.Space))
+        {
+            gameManager.IntPharmacy();
+            gameManager.StopGameTime();
+            StopPlayer();
+        }
+
+        if(OnMart && Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
+
         DonotAttack();
         HpManager();
         Die();
@@ -178,6 +193,14 @@ public class PlayerMove : MonoBehaviour
         {
             OnBox = true;
         }
+        if(other.gameObject.tag == "EnterPharmacy")
+        {
+            Onpharmacy = true;
+        }
+        if(other.gameObject.tag == "EnterMart")
+        {
+            OnMart = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) 
@@ -201,6 +224,14 @@ public class PlayerMove : MonoBehaviour
         if(other.gameObject.tag == "Boxes")
         {
             OnBox = false;
+        }
+        if(other.gameObject.tag == "EnterPharmacy")
+        {
+            Onpharmacy = false;
+        }
+        if(other.gameObject.tag == "EnterMart")
+        {
+            OnMart = false;
         }
     }
 
