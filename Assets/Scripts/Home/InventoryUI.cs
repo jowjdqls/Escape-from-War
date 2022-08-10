@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    Inventory inven;
+    public static Inventory inven;
 
-    public Slot[] slots;
+    public static Slot[] slots;
     public Transform slotHolder;
 
     public void Start()
@@ -19,10 +19,12 @@ public class InventoryUI : MonoBehaviour
         inven.onSlotCountChange += SlotChange;
     }
 
-    private void SlotChange(int val)
+    public void SlotChange(int val)
     {
         for(int i = 0; i < slots.Length; i++)
         {
+            slots[i].slotnum = i;
+
             if(i< inven.SlotCnt)
                 slots[i].GetComponent<Button>().interactable = true;
             else

@@ -413,7 +413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 817737507}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: IntStation
+        m_MethodName: IntMartYes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4822,7 +4822,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 817737507}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: IntStation
+        m_MethodName: IntPharmacyYes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10022,7 +10022,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 817737507}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: IntStationNo
+        m_MethodName: IntPharmacyNo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12460,7 +12460,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 817737507}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: IntStationNo
+        m_MethodName: IntMartNo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

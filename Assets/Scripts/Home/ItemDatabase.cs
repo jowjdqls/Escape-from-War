@@ -22,7 +22,7 @@ public class ItemDatabase : MonoBehaviour
     private void Start()
     {
         var used = new List<int>();
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < 21; i++)
         {
             GameObject go = Instantiate(fieldItemPrefab, pos[i], Quaternion.identity);
             var index = randomExcept(20, used);
