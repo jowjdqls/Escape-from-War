@@ -68,11 +68,18 @@ public class LoadMainScene : MonoBehaviour
         {
             SceneManager.LoadScene("MainGame");
         }
+
+        Timer.currenttime = 0;
+        PlayerPrefs.SetFloat("Time", Timer.currenttime);
+        PlayerPrefs.Save();
     }
 
     public void MainScene()
     {
         SceneManager.LoadScene("MainGame");
+        Timer.currenttime = 0;
+        PlayerPrefs.SetFloat("Time", Timer.currenttime);
+        PlayerPrefs.Save();
     }
 
     public void achievScene()

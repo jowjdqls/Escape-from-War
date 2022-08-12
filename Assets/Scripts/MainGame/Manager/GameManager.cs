@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
         StopGame = false;
         AchievmentManager.one = PlayerPrefs.GetInt("OneAch");
         AchievmentManager.two = PlayerPrefs.GetInt("TwoAch");
+        Timer.currenttime = PlayerPrefs.GetFloat("Time");
+        //PlayerPrefs.DeleteKey("Time");
     }
 
     private void Update()
@@ -140,6 +142,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainGame");
         StartGameTime();
         player.StartPlayer();
+        Timer.currenttime = 0;
+        PlayerPrefs.SetFloat("Time", Timer.currenttime);
+        PlayerPrefs.Save();
     }
 
     public void escQuit()
@@ -366,6 +371,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //마트 들어가기
     public void IntMart()
     {
         MartText.SetActive(true);

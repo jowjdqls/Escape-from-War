@@ -10,15 +10,9 @@ public class PlayerMoveHome : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Timer.currenttime = PlayerPrefs.GetFloat("Time");
     }
 
-    public void Update()
-    {
-
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
@@ -31,6 +25,7 @@ public class PlayerMoveHome : MonoBehaviour
     {
         if(other.gameObject.tag == "ExistHome")
         {
+            Timer.currenttime = PlayerPrefs.GetFloat("Time");
             SceneManager.LoadScene("MainGame");
         }
     }
