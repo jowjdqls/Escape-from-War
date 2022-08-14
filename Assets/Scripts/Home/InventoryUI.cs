@@ -13,6 +13,7 @@ public class InventoryUI : MonoBehaviour
     public void Start()
     {
         inven = Inventory.instance;
+        
         //자식오브젝트 컴포넌트 한번에 가져오기
         slots = slotHolder.GetComponentsInChildren<Slot>();
         inven.onChangeItem += RedrawSlotUI;

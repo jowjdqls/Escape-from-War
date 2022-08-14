@@ -70,12 +70,5 @@ public class Inventory : MonoBehaviour
             if(AddItem(fieldItems.GetItem()))
             fieldItems.DestroyItem();
         }
-        /*if(collision.CompareTag("Bag"))
-        {
-            FieldItems fieldItems = collision.GetComponent<FieldItems>();
-            if(AddItem(fieldItems.GetItem()))
-            fieldItems.DestroyItem();
-            invenUI.addslot();
-        }*/
     }
 }
