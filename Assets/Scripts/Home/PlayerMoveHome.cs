@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMoveHome : MonoBehaviour
 {
-
+    public VariableJoystick Joy;
     public int Speed;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,11 @@ public class PlayerMoveHome : MonoBehaviour
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
+
+        float x = Joy.Horizontal;
+        float y = Joy.Vertical;
+
+        transform.Translate(new Vector2(x, y) * Speed * Time.deltaTime);
 
         transform.Translate(new Vector2(inputX, inputY) * Time.deltaTime * Speed);
     }

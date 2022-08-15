@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     public GameManager gameManager;
     public GameObject character;
+    public VariableJoystick MJoy;
 
     public float Gettent = 1;
     public float HealTent = 0;
@@ -143,6 +144,10 @@ public class PlayerMove : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+
+        float MainX = MJoy.Horizontal;
+
+        transform.Translate(new Vector2(MainX, 0) * maxSpeed * Time.deltaTime);
 
         if (rigid.velocity.x > maxSpeed)
             rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
