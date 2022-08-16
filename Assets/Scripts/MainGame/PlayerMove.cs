@@ -11,12 +11,12 @@ public class PlayerMove : MonoBehaviour
     public Slider hugrybar;
     public Slider waterbar;
 
-    public float maxHp = 100;
-    public float curHp = 100;
-    public float maxhu = 100;
-    public float curhu = 100;
-    public float maxWa = 100;
-    public float curWa = 100;
+    public static float maxHp = 100;
+    public static float curHp = 100;
+    public static float maxhu = 100;
+    public static float curhu = 100;
+    public static float maxWa = 100;
+    public static float curWa = 100;
 
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;

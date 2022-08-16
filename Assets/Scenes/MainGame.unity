@@ -8349,11 +8349,13 @@ MonoBehaviour:
   - itemYype: 0
     itemName: Wallet
     itemImage: {fileID: -1300236618369786446, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: cfb33636237f32a46bbf90caeb132d53, type: 2}
   - itemYype: 0
     itemName: Tshirts
     itemImage: {fileID: 15631858925172445, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: c27cbc6e5f877e54299e206f28f20736, type: 2}
   - itemYype: 0
     itemName: lighter
     itemImage: {fileID: -4111129147521867038, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
@@ -8365,15 +8367,18 @@ MonoBehaviour:
   - itemYype: 0
     itemName: lamen
     itemImage: {fileID: 1588348861518299571, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 60f2b070be096f9489976e637990281f, type: 2}
   - itemYype: 0
     itemName: tomato
     itemImage: {fileID: -7039906896274724699, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: c98c3746351578849949308040e9ac80, type: 2}
   - itemYype: 0
-    itemName: care
+    itemName: curry
     itemImage: {fileID: 3677476688327139080, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 3e49684bcacbdbd499f135182e9b1ef6, type: 2}
   - itemYype: 0
     itemName: changewater
     itemImage: {fileID: -8964600369387083994, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
@@ -8385,7 +8390,8 @@ MonoBehaviour:
   - itemYype: 0
     itemName: chopstick
     itemImage: {fileID: 2397368075088063907, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 661559ea788460b49991b0551e29411b, type: 2}
   - itemYype: 0
     itemName: tent
     itemImage: {fileID: 1882730087041568543, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
@@ -8397,11 +8403,13 @@ MonoBehaviour:
   - itemYype: 0
     itemName: water
     itemImage: {fileID: 1576966498301724414, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 19d6df43f34ab864bb00b3d98e9f44cc, type: 2}
   - itemYype: 0
     itemName: soldierfood
     itemImage: {fileID: 3742867995815085018, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: be597b080e1a2494f8a2aa913c28a63d, type: 2}
   - itemYype: 0
     itemName: firestick
     itemImage: {fileID: 6488367616277745261, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
@@ -8411,9 +8419,10 @@ MonoBehaviour:
     itemImage: {fileID: -1951028946173833503, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
     efts: []
   - itemYype: 0
-    itemName: medisonbox
+    itemName: Firstaidkit
     itemImage: {fileID: -67070466085258931, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 22573228cc0efea47b8675b9c0a7af2b, type: 2}
   - itemYype: 0
     itemName: scissors
     itemImage: {fileID: -8525007703874292550, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
@@ -8421,7 +8430,8 @@ MonoBehaviour:
   - itemYype: 0
     itemName: band
     itemImage: {fileID: -882002879656368301, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 0d95e678065706c4aad4405d1d5b9266, type: 2}
   - itemYype: 0
     itemName: ladio
     itemImage: {fileID: -4406931530865019314, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
@@ -8432,7 +8442,28 @@ MonoBehaviour:
     efts:
     - {fileID: 11400000, guid: 623c5a940f01f834391607e7f5df68da, type: 2}
   fieldItemPrefab: {fileID: 4903071843675274024, guid: 72b335da73009ac489a51e5c3a32372c, type: 3}
-  pos: []
+  pos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!4 &990994998
 Transform:
   m_ObjectHideFlags: 0
@@ -8532,6 +8563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1002132088}
   - component: {fileID: 1002132087}
+  - component: {fileID: 1002132091}
   - component: {fileID: 1002132089}
   - component: {fileID: 1002132086}
   - component: {fileID: 1002132085}
@@ -8660,12 +8692,6 @@ MonoBehaviour:
   hpbar: {fileID: 1986398877}
   hugrybar: {fileID: 1464108733}
   waterbar: {fileID: 197737048}
-  maxHp: 100
-  curHp: 100
-  maxhu: 100
-  curhu: 100
-  maxWa: 100
-  curWa: 100
   maxSpeed: 5
   gameManager: {fileID: 817737507}
   character: {fileID: 1002132084}
@@ -8696,6 +8722,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1002132091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002132084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0758c164e562b1e44ba308c0bb4db6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  invenUI: {fileID: 849550780}
 --- !u!1 &1007233713
 GameObject:
   m_ObjectHideFlags: 0

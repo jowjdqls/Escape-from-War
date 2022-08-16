@@ -2823,7 +2823,8 @@ MonoBehaviour:
   - itemYype: 0
     itemName: lamen
     itemImage: {fileID: 1588348861518299571, guid: 1051014a256468b4f9632da5a88c2767, type: 3}
-    efts: []
+    efts:
+    - {fileID: 11400000, guid: 60f2b070be096f9489976e637990281f, type: 2}
   - itemYype: 0
     itemName: tomato
     itemImage: {fileID: -7039906896274724699, guid: 1051014a256468b4f9632da5a88c2767, type: 3}

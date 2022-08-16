@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
 
     public static bool StopGame;
 
+    public static int WalletP = 0;
+    public static int CarKey = 0;
+
     void Awake()
     {
         UIEnterStation.SetActive(false);
@@ -211,8 +214,8 @@ public class GameManager : MonoBehaviour
     public void OnTentYes()
     {
         UITentText.SetActive(false);
-        player.curhu += 50;
-        player.curWa += 50;
+        PlayerMove.curhu += 50;
+        PlayerMove.curWa += 50;
         StartGameTime();
         player.StartPlayer();
         player.Gettent -= 1;
@@ -248,7 +251,7 @@ public class GameManager : MonoBehaviour
         UIHospitalEnter.SetActive(false);
         StartGameTime();
         player.StartPlayer();
-        player.curHp += 70;
+        PlayerMove.curHp += 70;
         player.HospitalP -= 1;
         if(AchievmentManager.two == 0)
         {
