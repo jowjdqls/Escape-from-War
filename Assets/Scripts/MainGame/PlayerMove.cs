@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class PlayerMove : MonoBehaviour
     bool Onpharmacy = false;
     bool OnMart = false;
 
+    bool BtuDown = false;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -64,50 +67,50 @@ public class PlayerMove : MonoBehaviour
     {
         Move();
 
-        if(onStay && Input.GetKeyDown(KeyCode.Space))
+        if(onStay && BtuDown)
         {
             gameManager.Ontext();
             gameManager.StopGameTime();
             StopPlayer();
         }
-        if(onCar && Input.GetKeyDown(KeyCode.Space))
+        if(onCar && BtuDown)
         {
             gameManager.IntCar();
             gameManager.StopGameTime();
             StopPlayer();
         }
-        if(OnTent && Input.GetKeyDown(KeyCode.Space) && Gettent == 1)
+        if(OnTent && BtuDown && Gettent == 1)
         {
             gameManager.OnTenttext();
             gameManager.StopGameTime();
             StopPlayer();
         }
-        else if(OnTent && Input.GetKeyDown(KeyCode.Space) && Gettent == 0)
+        else if(OnTent && BtuDown && Gettent == 0)
         {
             gameManager.OnTentGet();
             gameManager.StopGameTime();
             StopPlayer();
         }
-        if(OnHospital && Input.GetKeyDown(KeyCode.Space) && GetHospital == 1)
+        if(OnHospital && BtuDown && GetHospital == 1)
         {
             gameManager.OnHospitalText();
             gameManager.StopGameTime();
             StopPlayer();
         }
-        else if(OnHospital && Input.GetKeyDown(KeyCode.Space) && GetHospital == 0 && HospitalP == 1)
+        else if(OnHospital && BtuDown && GetHospital == 0 && HospitalP == 1)
         {
             gameManager.OnHospitalEnt();
             gameManager.StopGameTime();
             StopPlayer();
         }
-        else if(OnHospital && Input.GetKeyDown(KeyCode.Space) && GetHospital == 0 && HospitalP == 0)
+        else if(OnHospital && BtuDown && GetHospital == 0 && HospitalP == 0)
         {
             gameManager.OnHospitalNoEnt();
             gameManager.StopGameTime();
             StopPlayer();
         }
 
-        if(OnBox && Input.GetKeyDown(KeyCode.Space))
+        if(OnBox && BtuDown)
         {
             gameManager.OnBoxText();
             gameManager.StopGameTime();
@@ -115,14 +118,14 @@ public class PlayerMove : MonoBehaviour
         }
 
         //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        if(Onpharmacy && Input.GetKeyDown(KeyCode.Space))
+        if(Onpharmacy && BtuDown)
         {
             gameManager.IntPharmacy();
             gameManager.StopGameTime();
             StopPlayer();
         }
 
-        if(OnMart && Input.GetKeyDown(KeyCode.Space))
+        if(OnMart && BtuDown)
         {
             gameManager.IntMart();
             gameManager.StopGameTime();
@@ -358,6 +361,16 @@ public class PlayerMove : MonoBehaviour
     public void DamageEnemy()
     {
         curHp -= 10f;
+    }
+
+    public void OnPointerDown()
+    {
+        BtuDown = true;
+    }
+
+    public void OnPointerUp()
+    {
+        BtuDown = false;
     }
 
     public void MaXStat()
