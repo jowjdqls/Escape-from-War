@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HomeManager : MonoBehaviour
 {
     public static float HomeTime;
+    public static bool HomeStopGame;
 
     public GameObject EscUI;
 
@@ -28,11 +29,13 @@ public class HomeManager : MonoBehaviour
     public void Xhome()
     {
         EscUI.SetActive(false);
+        StartHomeGame();
     }
 
     public void EscOn()
     {
         EscUI.SetActive(true);
+        StopHomeGame();
     }
 
     public void escMenuhome()
@@ -53,4 +56,17 @@ public class HomeManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void StopHomeGame()
+    {
+        Time.timeScale = 0;
+        HomeStopGame = true;
+        return;
+    }
+
+    public void StartHomeGame()
+    {
+        Time.timeScale = 1;
+        HomeStopGame =false;
+        return;
+    }
 }

@@ -79,9 +79,6 @@ public class GameManager : MonoBehaviour
         if (stageIndex == Stages.Length - 1)
         {
             SceneManager.LoadScene("EndScene");
-            AchievmentManager.eight = 1;
-            PlayerPrefs.SetInt("EightAch", AchievmentManager.eight);
-            PlayerPrefs.Save();
         }
         else
         {
