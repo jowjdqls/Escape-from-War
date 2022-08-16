@@ -34,7 +34,7 @@ public class AchievmentManager : MonoBehaviour
     public static int five = 0;
     public static int six = 0;
     public static int seven = 0;
-    public static int eghit = 0;
+    public static int eight = 0;
     public static int nine = 0;
     public static int ten = 0;
 
@@ -47,7 +47,7 @@ public class AchievmentManager : MonoBehaviour
         five = PlayerPrefs.GetInt("FiveAch");
         six = PlayerPrefs.GetInt("SixAch");
         seven = PlayerPrefs.GetInt("SevenAch");
-        eghit = PlayerPrefs.GetInt("EghitAch");
+        eight = PlayerPrefs.GetInt("EightAch");
         nine = PlayerPrefs.GetInt("NineAch");
         ten = PlayerPrefs.GetInt("TenAch");
     }
@@ -96,7 +96,7 @@ public class AchievmentManager : MonoBehaviour
             AchievUI7.SetActive(true);
         }
 
-        if(eghit == 1)
+        if(eight == 1)
         {
             LockedUI8.SetActive(false);
             AchievUI8.SetActive(true);

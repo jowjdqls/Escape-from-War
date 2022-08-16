@@ -91,4 +91,9 @@ public class LoadMainScene : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void MenuScene()
+    {
+        SceneManager.LoadScene("IntScene");
+    }
 }

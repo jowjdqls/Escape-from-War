@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject MartText;
 
     public GameObject pharmacyText;
+    public GameObject UIpharmacy;
 
     public PlayerMove player;
 
@@ -75,6 +76,9 @@ public class GameManager : MonoBehaviour
         if (stageIndex == Stages.Length - 1)
         {
             SceneManager.LoadScene("EndScene");
+            AchievmentManager.eight = 1;
+            PlayerPrefs.SetInt("EightAch", AchievmentManager.eight);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -362,13 +366,24 @@ public class GameManager : MonoBehaviour
     public void IntPharmacyYes()
     {
         pharmacyText.SetActive(false);
-        StartGameTime();
-        player.StartPlayer();
+        UIpharmacy.SetActive(true);
+        AchievmentManager.six = 1;
+        PlayerPrefs.SetInt("SixAch", AchievmentManager.six);
+        PlayerPrefs.Save();
     }
 
     public void IntPharmacyNo()
     {
+        pharmacyText.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
 
+    public void BackPharmacy()
+    {
+        UIpharmacy.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
     }
 
     //마트 들어가기

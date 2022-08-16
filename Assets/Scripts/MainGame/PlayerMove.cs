@@ -129,6 +129,13 @@ public class PlayerMove : MonoBehaviour
             StopPlayer();
         }
 
+        if(curhu <= 0 && curWa <= 0)
+        {
+            AchievmentManager.four = 1;
+            PlayerPrefs.SetInt("FourAch", AchievmentManager.four);
+            PlayerPrefs.Save();
+        }
+
         DonotAttack();
         HpManager();
         Die();
@@ -249,6 +256,15 @@ public class PlayerMove : MonoBehaviour
             Damagemisile();
             Destroy(other.gameObject);
         }
+        else if(other.gameObject.tag == "misile" && curHp <= 90)
+        {
+            Damagemisile();
+            Destroy(other.gameObject);
+            AchievmentManager.three = 1;
+            PlayerPrefs.SetInt("ThreeAch", AchievmentManager.three);
+            PlayerPrefs.Save();
+            Debug.Log("aaaaaaaaaaaaaaa");
+        }
         if(other.gameObject.tag == "Enemy" && Attackenemy == 1)
         {
             DamageEnemy();
@@ -257,6 +273,9 @@ public class PlayerMove : MonoBehaviour
         if(other.gameObject.tag == "EnterHome")
         {
             SceneManager.LoadScene("IntHome");
+            AchievmentManager.seven = 1;
+            PlayerPrefs.SetInt("SevenAch", AchievmentManager.seven);
+            PlayerPrefs.Save();
         }
     }
 
@@ -325,6 +344,9 @@ public class PlayerMove : MonoBehaviour
         if(curHp <= 0)
         {
             SceneManager.LoadScene("DieScene");
+            AchievmentManager.five = 1;
+            PlayerPrefs.SetInt("FiveAch", AchievmentManager.five);
+            PlayerPrefs.Save();
         }
     }
 
