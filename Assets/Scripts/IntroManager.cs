@@ -91,7 +91,7 @@ public class IntroManager : MonoBehaviour
         }
         if(StartTime <= 7)
         {
-            FirstPlay --;
+            FirstPlay = 0;
             PlayerPrefs.SetInt("FirstP", FirstPlay);
             PlayerPrefs.Save();
             SceneManager.LoadScene("MainGame");

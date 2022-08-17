@@ -21,6 +21,7 @@ public class LoadMainScene : MonoBehaviour
         UInextBtu.SetActive(false);
         UIbackBtu.SetActive(false);
         UIcloseBtu.SetActive(false);
+        IntroManager.FirstPlay = PlayerPrefs.GetInt("FirstP");
     }
 
     public void help()

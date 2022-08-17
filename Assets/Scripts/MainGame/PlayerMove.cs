@@ -58,6 +58,12 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        maxHp = 100;
+        curHp = 100;
+        maxHp = 100;
+        curhu = 100;
+        maxWa = 100;
+        curWa = 100;
         hpbar.value = (float) curHp / (float) maxHp;  
         hugrybar.value = (float) curhu / (float) maxhu;
         waterbar.value = (float) curWa / (float) maxWa;
@@ -259,15 +265,6 @@ public class PlayerMove : MonoBehaviour
             Damagemisile();
             Destroy(other.gameObject);
         }
-        else if(other.gameObject.tag == "misile" && curHp <= 90)
-        {
-            Damagemisile();
-            Destroy(other.gameObject);
-            AchievmentManager.three = 1;
-            PlayerPrefs.SetInt("ThreeAch", AchievmentManager.three);
-            PlayerPrefs.Save();
-            Debug.Log("aaaaaaaaaaaaaaa");
-        }
         if(other.gameObject.tag == "Enemy" && Attackenemy == 1)
         {
             DamageEnemy();
@@ -356,11 +353,17 @@ public class PlayerMove : MonoBehaviour
     public void Damagemisile()
     {
         curHp -= 90f;
+        AchievmentManager.three = 1;
+        PlayerPrefs.SetInt("ThreeAch", AchievmentManager.three);
+        PlayerPrefs.Save();
     }
 
     public void DamageEnemy()
     {
         curHp -= 10f;
+        AchievmentManager.nine = 1;
+        PlayerPrefs.SetInt("NineAch", AchievmentManager.nine);
+        PlayerPrefs.Save();
     }
 
     public void OnPointerDown()

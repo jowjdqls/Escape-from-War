@@ -12,7 +12,6 @@ public class InventoryUI : MonoBehaviour
 
     public void Start()
     {
-        PlayerPrefs.GetInt("ItemUI");
         inven = Inventory.instance;
         
         //자식오브젝트 컴포넌트 한번에 가져오기
@@ -31,8 +30,6 @@ public class InventoryUI : MonoBehaviour
                 slots[i].GetComponent<Button>().interactable = true;
             else
                 slots[i].GetComponent<Button>().interactable = false;
-            PlayerPrefs.SetInt("ItemUI", slots.Length);
-            PlayerPrefs.Save();
         }
     }
 

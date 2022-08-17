@@ -79,6 +79,9 @@ public class GameManager : MonoBehaviour
         if (stageIndex == Stages.Length - 1)
         {
             SceneManager.LoadScene("EndScene");
+            AchievmentManager.ten = 1;
+            PlayerPrefs.SetInt("TenAch", AchievmentManager.ten);
+            PlayerPrefs.Save();
         }
         else
         {
