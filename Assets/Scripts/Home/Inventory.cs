@@ -44,6 +44,7 @@ public class Inventory : MonoBehaviour
         SlotCnt = 4;
     }
 
+    //아이템 추가
     public bool AddItem(Item _item)
     {
         if(items.Count < SlotCnt)

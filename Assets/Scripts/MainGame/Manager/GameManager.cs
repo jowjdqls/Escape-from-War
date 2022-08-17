@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject Armybtu;
 
     public GameObject MartText;
+    public GameObject UImart;
 
     public GameObject pharmacyText;
     public GameObject UIpharmacy;
@@ -397,11 +398,21 @@ public class GameManager : MonoBehaviour
 
     public void IntMartYes()
     {
-
+        MartText.SetActive(false);
+        UImart.SetActive(true);
     }
 
     public void IntMartNo()
     {
-        
+        MartText.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void BackMart()
+    {
+        UImart.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
     }
 }
