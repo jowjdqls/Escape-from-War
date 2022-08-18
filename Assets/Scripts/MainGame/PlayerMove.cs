@@ -183,6 +183,7 @@ public class PlayerMove : MonoBehaviour
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
         }
 
+      
         if(Mathf.Abs(rigid.velocity.x) < 0.3)
             anim.SetBool("isWalking", false);
         else
