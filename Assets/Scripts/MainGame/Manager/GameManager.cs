@@ -26,11 +26,13 @@ public class GameManager : MonoBehaviour
     public GameObject UIesctext;
 
     public GameObject UIUseCar;
+    public GameObject NoCarKey;
     public GameObject UIArmy;
     public GameObject UIArmyTalk;
     public GameObject CarObj;
     public GameObject Armybtu;
 
+    public GameObject UInomoney;
     public GameObject MartText;
     public GameObject UImart;
 
@@ -316,6 +318,18 @@ public class GameManager : MonoBehaviour
         UIUseCar.SetActive(true);
     }
 
+    public void DonotIntCar()
+    {
+        NoCarKey.SetActive(true);
+    }
+
+    public void DonotIntCarAnswer()
+    {
+        NoCarKey.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
+
     public void IntCarYes()
     {
         player.offCharacter();
@@ -362,6 +376,18 @@ public class GameManager : MonoBehaviour
     }
 
     //약국 들어가기
+
+    public void NomoneyPharmacy()
+    {
+        UInomoney.SetActive(true);
+    }
+
+    public void NomoneyPharmacyAnswer()
+    {
+        UInomoney.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
     public void IntPharmacy()
     {
         pharmacyText.SetActive(true);

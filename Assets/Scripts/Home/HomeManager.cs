@@ -46,7 +46,8 @@ public class HomeManager : MonoBehaviour
 
     public void escRePlayhome()
     {
-        SceneManager.LoadScene("MainGame");
+        LoddingManager.LoadScene("MainGame");
+        //SceneManager.LoadScene("MainGame");
         Timer.currenttime = 0;
         StartHomeGame();
         PlayerPrefs.SetFloat("Time", Timer.currenttime);

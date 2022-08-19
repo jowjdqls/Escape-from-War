@@ -79,9 +79,15 @@ public class PlayerMove : MonoBehaviour
             gameManager.StopGameTime();
             StopPlayer();
         }
-        if(onCar && BtuDown)
+        if(onCar && BtuDown && GameManager.CarKey == 1)
         {
             gameManager.IntCar();
+            gameManager.StopGameTime();
+            StopPlayer();
+        }
+        else if(onCar && BtuDown && GameManager.CarKey == 0)
+        {
+            gameManager.DonotIntCar();
             gameManager.StopGameTime();
             StopPlayer();
         }
@@ -124,16 +130,28 @@ public class PlayerMove : MonoBehaviour
         }
 
         //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        if(Onpharmacy && BtuDown)
+        if(Onpharmacy && BtuDown && GameManager.WalletP == 1)
         {
             gameManager.IntPharmacy();
             gameManager.StopGameTime();
             StopPlayer();
         }
+        else if(Onpharmacy && BtuDown && GameManager.WalletP == 0)
+        {
+            gameManager.NomoneyPharmacy();
+            gameManager.StopGameTime();
+            StopPlayer();
+        }
 
-        if(OnMart && BtuDown)
+        if(OnMart && BtuDown && GameManager.WalletP == 1)
         {
             gameManager.IntMart();
+            gameManager.StopGameTime();
+            StopPlayer();
+        }
+        else if(OnMart && BtuDown && GameManager.WalletP == 0)
+        {
+            gameManager.NomoneyPharmacy();
             gameManager.StopGameTime();
             StopPlayer();
         }
@@ -274,7 +292,6 @@ public class PlayerMove : MonoBehaviour
         if(other.gameObject.tag == "EnterHome")
         {
             LoddingManager.LoadScene("IntHome");
-            //SceneManager.LoadScene("IntHome");
             AchievmentManager.seven = 1;
             PlayerPrefs.SetInt("SevenAch", AchievmentManager.seven);
             PlayerPrefs.Save();
