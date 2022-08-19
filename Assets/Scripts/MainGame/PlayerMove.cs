@@ -273,7 +273,8 @@ public class PlayerMove : MonoBehaviour
         }
         if(other.gameObject.tag == "EnterHome")
         {
-            SceneManager.LoadScene("IntHome");
+            LoddingManager.LoadScene("IntHome");
+            //SceneManager.LoadScene("IntHome");
             AchievmentManager.seven = 1;
             PlayerPrefs.SetInt("SevenAch", AchievmentManager.seven);
             PlayerPrefs.Save();

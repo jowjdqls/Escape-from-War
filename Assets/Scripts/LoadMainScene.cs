@@ -63,11 +63,13 @@ public class LoadMainScene : MonoBehaviour
         SceneManager.LoadScene("IntroScene");
         if(IntroManager.FirstPlay == 1)
         {
-            SceneManager.LoadScene("IntroScene");
+            LoddingManager.LoadScene("IntroScene");
+            //SceneManager.LoadScene("IntroScene");
         }
         else if(IntroManager.FirstPlay <= 0)
         {
-            SceneManager.LoadScene("MainGame");
+            LoddingManager.LoadScene("MainGame");
+            //SceneManager.LoadScene("MainGame");
         }
 
         Timer.currenttime = 0;
@@ -77,7 +79,8 @@ public class LoadMainScene : MonoBehaviour
 
     public void MainScene()
     {
-        SceneManager.LoadScene("MainGame");
+        LoddingManager.LoadScene("MainGame");
+        //SceneManager.LoadScene("MainGame");
         Timer.currenttime = 0;
         PlayerPrefs.SetFloat("Time", Timer.currenttime);
         PlayerPrefs.Save();

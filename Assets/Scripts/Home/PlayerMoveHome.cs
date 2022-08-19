@@ -32,7 +32,8 @@ public class PlayerMoveHome : MonoBehaviour
         if(other.gameObject.tag == "ExistHome")
         {
             Timer.currenttime = PlayerPrefs.GetFloat("Time");
-            SceneManager.LoadScene("MainGame");
+            LoddingManager.LoadScene("MainGame");
+            //SceneManager.LoadScene("MainGame");
         }
     }
 }
