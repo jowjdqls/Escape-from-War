@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+    Vector2 moveVec;
 
     public float maxSpeed;
     public GameManager gameManager;
@@ -176,17 +177,37 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+        //float h = Input.GetAxisRaw("Horizontal");
+        //rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
         float MainX = MJoy.Horizontal;
 
-        transform.Translate(new Vector2(MainX, 0) * maxSpeed * Time.deltaTime);
+        moveVec = new Vector2(MainX, 0) * maxSpeed * Time.deltaTime;
+        rigid.MovePosition(rigid.position + moveVec);
 
-        if (rigid.velocity.x > maxSpeed)
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        else if (rigid.velocity.x < maxSpeed * -1)
-            rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
+        if(moveVec.sqrMagnitude == 0)
+            return;
+
+    
+
+        //transform.Translate(new Vector2(MainX, 0) * maxSpeed * Time.deltaTime);
+
+        //if (rigid.velocity.x > maxSpeed)
+          //  rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+        //else if (rigid.velocity.x < maxSpeed * -1)
+          //  rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
+    }
+
+    public void stopGame()
+    {
+        gameManager.StopGameTime();
+        StopPlayer();
+    }
+
+    public void startGame()
+    {
+        gameManager.StartGameTime();
+        StartPlayer();
     }
 
     public void Move()
