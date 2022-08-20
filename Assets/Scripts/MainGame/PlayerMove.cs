@@ -383,6 +383,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(curHp <= 0)
         {
+            SaveInvenUI.instance.DestroyUI();
             SceneManager.LoadScene("DieScene");
             AchievmentManager.five = 1;
             PlayerPrefs.SetInt("FiveAch", AchievmentManager.five);

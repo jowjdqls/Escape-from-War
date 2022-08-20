@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
         AchievmentManager.one = PlayerPrefs.GetInt("OneAch");
         AchievmentManager.two = PlayerPrefs.GetInt("TwoAch");
         Timer.currenttime = PlayerPrefs.GetFloat("Time");
-        //PlayerPrefs.DeleteKey("Time");
     }
 
     private void Update()
@@ -82,6 +81,7 @@ public class GameManager : MonoBehaviour
         if (stageIndex == Stages.Length - 1)
         {
             SceneManager.LoadScene("EndScene");
+            SaveInvenUI.instance.DestroyUI();
             AchievmentManager.ten = 1;
             PlayerPrefs.SetInt("TenAch", AchievmentManager.ten);
             PlayerPrefs.Save();
@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void escMenu()
     {
+        SaveInvenUI.instance.DestroyUI();
         SceneManager.LoadScene("IntScene");
         StartGameTime();
         player.StartPlayer();
@@ -149,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void escRePlay()
     {
+        SaveInvenUI.instance.DestroyUI();
         SceneManager.LoadScene("MainGame");
         StartGameTime();
         player.StartPlayer();
