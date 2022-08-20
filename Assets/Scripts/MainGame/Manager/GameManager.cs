@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        WalletP = 0;
+        CarKey = 0;
         UIEnterStation.SetActive(false);
         UIExitStation.SetActive(false);
         UIArmy.SetActive(false);

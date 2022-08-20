@@ -2430,7 +2430,7 @@ GameObject:
   - component: {fileID: 248660353}
   m_Layer: 0
   m_Name: MilitaryCar
-  m_TagString: Untagged
+  m_TagString: MilitaryCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9137,7 +9137,7 @@ MonoBehaviour:
   hpbar: {fileID: 1986398877}
   hugrybar: {fileID: 1464108733}
   waterbar: {fileID: 197737048}
-  maxSpeed: 30
+  maxSpeed: 5
   gameManager: {fileID: 817737507}
   character: {fileID: 1002132084}
   MJoy: {fileID: 1799517994}
@@ -15524,7 +15524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8209263020108358037, guid: 557ec5f1b3dffa84b95f0f71d5592ae6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

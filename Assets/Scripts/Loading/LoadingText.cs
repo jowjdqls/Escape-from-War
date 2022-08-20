@@ -32,7 +32,8 @@ public class LoadingText : MonoBehaviour
         "물과 식량은 생존에 필수적입니다",
         "업적을 확인하여 자세한 내용을 확인하세요",
         "집에서는 아이템을 획득할 수 있습니다",
-        "모든 위험을 해치고 도망치세요"
+        "모든 위험을 해치고 도망치세요",
+        "공습경보가 울리면 가까운 대피소로 도망치세요"
     };
     // Start is called before the first frame update
     void Start()
