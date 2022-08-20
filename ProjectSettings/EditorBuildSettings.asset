@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoddingScene.unity
     guid: 093a282c205c6eb49b82e0fc4577f6d9
+  - enabled: 1
+    path: Assets/Scenes/MilitaryScene.unity
+    guid: 06774d6aa5ea43d4c87e13d1ccaa2cbc
   m_configObjects: {}

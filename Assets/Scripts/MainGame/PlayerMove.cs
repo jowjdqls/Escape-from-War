@@ -233,6 +233,12 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.gameObject.tag == "MilitaryCar")
+        {
+            gameManager.MeetMilitaryCar();
+            gameManager.StopGameTime();
+            StopPlayer();
+        }
         if(other.gameObject.tag == "End")
         {
             gameManager.NextStage();

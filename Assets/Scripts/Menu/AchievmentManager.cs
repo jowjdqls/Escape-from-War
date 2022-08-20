@@ -15,6 +15,7 @@ public class AchievmentManager : MonoBehaviour
     public GameObject LockedUI8;
     public GameObject LockedUI9;
     public GameObject LockedUI10;
+    public GameObject LockedUI11;
 
     public GameObject AchievUI1;
     public GameObject AchievUI2;
@@ -26,6 +27,7 @@ public class AchievmentManager : MonoBehaviour
     public GameObject AchievUI8;
     public GameObject AchievUI9;
     public GameObject AchievUI10;
+    public GameObject AchievUI11;
 
     public static int one = 0;
     public static int two = 0;
@@ -37,6 +39,7 @@ public class AchievmentManager : MonoBehaviour
     public static int eight = 0;
     public static int nine = 0;
     public static int ten = 0;
+    public static int eleven = 0;
 
     public void Start()
     {
@@ -50,6 +53,7 @@ public class AchievmentManager : MonoBehaviour
         eight = PlayerPrefs.GetInt("EightAch");
         nine = PlayerPrefs.GetInt("NineAch");
         ten = PlayerPrefs.GetInt("TenAch");
+        eleven = PlayerPrefs.GetInt("ElevAch");
     }
 
     public void Update()
@@ -112,6 +116,12 @@ public class AchievmentManager : MonoBehaviour
         {
             LockedUI10.SetActive(false);
             AchievUI10.SetActive(true);
+        }
+
+        if(eleven == 1)
+        {
+            LockedUI11.SetActive(false);
+            AchievUI11.SetActive(true);
         }
     }
 }

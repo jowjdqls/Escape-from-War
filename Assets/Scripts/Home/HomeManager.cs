@@ -22,7 +22,7 @@ public class HomeManager : MonoBehaviour
 
         if(HomeTime >= 30)
         {
-            SceneManager.LoadScene("MainGame");
+            LoddingManager.LoadScene("MainGame");
         }
     }
 

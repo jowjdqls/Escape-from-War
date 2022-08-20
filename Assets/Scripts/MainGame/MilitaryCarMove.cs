@@ -10,5 +10,7 @@ public class MilitaryCarMove : MonoBehaviour
     private void Update() 
     {
         transform.position += Vector3.left * Speed * Time.deltaTime;
+
+        Destroy(gameObject, 50.0f);
     }
 }

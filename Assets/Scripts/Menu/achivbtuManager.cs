@@ -17,6 +17,7 @@ public class achivbtuManager : MonoBehaviour
     public GameObject ExTextUI8;
     public GameObject ExTextUI9;
     public GameObject ExTextUI10;
+    public GameObject ExTextUI11;
 
     public void closebtu()
     {
@@ -31,6 +32,7 @@ public class achivbtuManager : MonoBehaviour
         ExTextUI8.SetActive(false);
         ExTextUI9.SetActive(false);
         ExTextUI10.SetActive(false);
+        ExTextUI11.SetActive(false);
     }
 
     public void BackMain()
@@ -96,5 +98,11 @@ public class achivbtuManager : MonoBehaviour
     {
         ExUI.SetActive(true);
         ExTextUI10.SetActive(true);
+    }
+
+    public void UI11btu()
+    {
+        ExUI.SetActive(true);
+        ExTextUI11.SetActive(true);
     }
 }

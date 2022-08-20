@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public GameObject pharmacyText;
     public GameObject UIpharmacy;
 
+    public GameObject MilitaryText;
+
     public PlayerMove player;
 
     public static bool StopGame;
@@ -476,5 +478,38 @@ public class GameManager : MonoBehaviour
         UImart.SetActive(false);
         StartGameTime();
         player.StartPlayer();
+    }
+
+    public void MeetMilitaryCar()
+    {
+        MilitaryText.SetActive(true);
+    }
+
+    public void militaryNo()
+    {
+        MilitaryText.SetActive(false);
+        StartGameTime();
+        player.StartPlayer();
+    }
+
+    public void militaryYes()
+    {
+        if(PlayerMove.EnterHome == 0)
+        {
+            SceneManager.LoadScene("MilitaryScene");
+            AchievmentManager.eleven = 1;
+            PlayerPrefs.SetInt("ElevAch", AchievmentManager.eleven);
+            PlayerPrefs.Save();
+            StartGameTime();
+            player.StartPlayer();
+        }
+        else if(PlayerMove.EnterHome == 1)
+        {
+            StartGameTime();
+            player.StartPlayer();
+            SaveInvenUI.instance.DestroyUI();
+            SaveHomePlayer.P_instance.DestroyHomePlayer();
+            SceneManager.LoadScene("MilitaryScene");
+        }
     }
 }
