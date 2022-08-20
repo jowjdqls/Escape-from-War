@@ -143,6 +143,7 @@ public class GameManager : MonoBehaviour
     public void escMenu()
     {
         SaveInvenUI.instance.DestroyUI();
+        SaveHomePlayer.P_instance.DestroyHomePlayer();
         SceneManager.LoadScene("IntScene");
         StartGameTime();
         player.StartPlayer();
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
     public void escRePlay()
     {
         SaveInvenUI.instance.DestroyUI();
+        SaveHomePlayer.P_instance.DestroyHomePlayer();
         SceneManager.LoadScene("MainGame");
         StartGameTime();
         player.StartPlayer();

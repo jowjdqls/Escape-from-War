@@ -40,6 +40,7 @@ public class HomeManager : MonoBehaviour
 
     public void escMenuhome()
     {
+        SaveHomePlayer.P_instance.DestroyHomePlayer();
         SaveInvenUI.instance.DestroyUI();
         SceneManager.LoadScene("intScene");
         StartHomeGame();
@@ -49,6 +50,7 @@ public class HomeManager : MonoBehaviour
     {
         LoddingManager.LoadScene("MainGame");
         //SceneManager.LoadScene("MainGame");
+        SaveHomePlayer.P_instance.DestroyHomePlayer();
         SaveInvenUI.instance.DestroyUI();
         Timer.currenttime = 0;
         StartHomeGame();

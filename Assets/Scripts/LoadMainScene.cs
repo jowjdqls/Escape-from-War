@@ -79,7 +79,8 @@ public class LoadMainScene : MonoBehaviour
 
     public void MainScene()
     {
-        LoddingManager.LoadScene("MainGame");
+        LoddingManager.LoadScene("MainGame");SaveHomePlayer.P_instance.DestroyHomePlayer();
+        SaveInvenUI.instance.DestroyUI();
         //SceneManager.LoadScene("MainGame");
         Timer.currenttime = 0;
         PlayerPrefs.SetFloat("Time", Timer.currenttime);
