@@ -43,6 +43,9 @@ public class HomeManager : MonoBehaviour
         SaveHomePlayer.P_instance.DestroyHomePlayer();
         SaveInvenUI.instance.DestroyUI();
         SceneManager.LoadScene("intScene");
+        Timer.currenttime = 0;
+        PlayerPrefs.SetFloat("Time", Timer.currenttime);
+        PlayerPrefs.Save();
         StartHomeGame();
     }
 
@@ -52,6 +55,7 @@ public class HomeManager : MonoBehaviour
         //SceneManager.LoadScene("MainGame");
         SaveHomePlayer.P_instance.DestroyHomePlayer();
         SaveInvenUI.instance.DestroyUI();
+        PlayerMove.EnterHome = 0;
         Timer.currenttime = 0;
         StartHomeGame();
         PlayerPrefs.SetFloat("Time", Timer.currenttime);

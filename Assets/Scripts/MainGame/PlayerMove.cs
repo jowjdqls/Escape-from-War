@@ -40,6 +40,8 @@ public class PlayerMove : MonoBehaviour
     public float HospitalP = 1;
     public float HospitalPHeal = 0;
 
+    public static float EnterHome = 0;
+
     bool onStay = false;
     bool onCar = false;
     bool OnTent = false;
@@ -310,9 +312,10 @@ public class PlayerMove : MonoBehaviour
             DamageEnemy();
             Destroy(other.gameObject);
         }
-        if(other.gameObject.tag == "EnterHome")
+        if(other.gameObject.tag == "EnterHome" && EnterHome == 0)
         {
             LoddingManager.LoadScene("IntHome");
+            EnterHome = 1;
             AchievmentManager.seven = 1;
             PlayerPrefs.SetInt("SevenAch", AchievmentManager.seven);
             PlayerPrefs.Save();
@@ -381,8 +384,16 @@ public class PlayerMove : MonoBehaviour
 
     public void Die()
     {
-        if(curHp <= 0)
+        if(curHp <= 0 && EnterHome == 0)
         {
+            SceneManager.LoadScene("DieScene");
+            AchievmentManager.five = 1;
+            PlayerPrefs.SetInt("FiveAch", AchievmentManager.five);
+            PlayerPrefs.Save();
+        }
+        else if(curHp <= 0 && EnterHome == 1)
+        {
+            SaveHomePlayer.P_instance.DestroyHomePlayer();
             SaveInvenUI.instance.DestroyUI();
             SceneManager.LoadScene("DieScene");
             AchievmentManager.five = 1;

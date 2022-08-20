@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
         if (stageIndex == Stages.Length - 1)
         {
             SceneManager.LoadScene("EndScene");
+            SaveHomePlayer.P_instance.DestroyHomePlayer();
             SaveInvenUI.instance.DestroyUI();
             AchievmentManager.ten = 1;
             PlayerPrefs.SetInt("TenAch", AchievmentManager.ten);
@@ -142,23 +143,52 @@ public class GameManager : MonoBehaviour
 
     public void escMenu()
     {
-        SaveInvenUI.instance.DestroyUI();
-        SaveHomePlayer.P_instance.DestroyHomePlayer();
-        SceneManager.LoadScene("IntScene");
-        StartGameTime();
-        player.StartPlayer();
+        if(PlayerMove.EnterHome == 1)
+        {
+            SaveInvenUI.instance.DestroyUI();
+            SaveHomePlayer.P_instance.DestroyHomePlayer();
+            SceneManager.LoadScene("IntScene");
+            PlayerMove.EnterHome = 0;
+            Timer.currenttime = 0;
+            PlayerPrefs.SetFloat("Time", Timer.currenttime);
+            PlayerPrefs.Save();
+            StartGameTime();
+            player.StartPlayer();
+        }
+        else if(PlayerMove.EnterHome == 0)
+        {
+            SceneManager.LoadScene("IntScene");
+            StartGameTime();
+            player.StartPlayer();
+            Timer.currenttime = 0;
+            PlayerPrefs.SetFloat("Time", Timer.currenttime);
+            PlayerPrefs.Save();
+        }
     }
 
     public void escRePlay()
     {
-        SaveInvenUI.instance.DestroyUI();
-        SaveHomePlayer.P_instance.DestroyHomePlayer();
-        SceneManager.LoadScene("MainGame");
-        StartGameTime();
-        player.StartPlayer();
-        Timer.currenttime = 0;
-        PlayerPrefs.SetFloat("Time", Timer.currenttime);
-        PlayerPrefs.Save();
+        if(PlayerMove.EnterHome == 1)
+        {
+            SaveInvenUI.instance.DestroyUI();
+            SaveHomePlayer.P_instance.DestroyHomePlayer();
+            SceneManager.LoadScene("MainGame");
+            StartGameTime();
+            player.StartPlayer();
+            Timer.currenttime = 0;
+            PlayerMove.EnterHome = 0;
+            PlayerPrefs.SetFloat("Time", Timer.currenttime);
+            PlayerPrefs.Save();
+        }
+        else if(PlayerMove.EnterHome == 0)
+        {
+            SceneManager.LoadScene("MainGame");
+            StartGameTime();
+            player.StartPlayer();
+            Timer.currenttime = 0;
+            PlayerPrefs.SetFloat("Time", Timer.currenttime);
+            PlayerPrefs.Save();
+        }
     }
 
     public void escQuit()

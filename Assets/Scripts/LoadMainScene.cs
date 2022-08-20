@@ -63,15 +63,13 @@ public class LoadMainScene : MonoBehaviour
         SceneManager.LoadScene("IntroScene");
         if(IntroManager.FirstPlay == 1)
         {
-            LoddingManager.LoadScene("IntroScene");
-            //SceneManager.LoadScene("IntroScene");
+            LoddingManager.LoadScene("IntroScene");;
         }
         else if(IntroManager.FirstPlay <= 0)
         {
-            LoddingManager.LoadScene("MainGame");
-            //SceneManager.LoadScene("MainGame");
+            LoddingManager.LoadScene("MainGame"); 
         }
-
+        PlayerMove.EnterHome = 0;
         Timer.currenttime = 0;
         PlayerPrefs.SetFloat("Time", Timer.currenttime);
         PlayerPrefs.Save();
@@ -79,12 +77,11 @@ public class LoadMainScene : MonoBehaviour
 
     public void MainScene()
     {
-        LoddingManager.LoadScene("MainGame");SaveHomePlayer.P_instance.DestroyHomePlayer();
-        SaveInvenUI.instance.DestroyUI();
-        //SceneManager.LoadScene("MainGame");
+        PlayerMove.EnterHome = 0;
         Timer.currenttime = 0;
         PlayerPrefs.SetFloat("Time", Timer.currenttime);
         PlayerPrefs.Save();
+        LoddingManager.LoadScene("MainGame");
     }
 
     public void achievScene()

@@ -2512,12 +2512,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248660348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.504604, y: -2.26, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 84.25, y: -0.40999997, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1329706579}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &248660353
 BoxCollider2D:
@@ -9137,7 +9137,7 @@ MonoBehaviour:
   hpbar: {fileID: 1986398877}
   hugrybar: {fileID: 1464108733}
   waterbar: {fileID: 197737048}
-  maxSpeed: 5
+  maxSpeed: 30
   gameManager: {fileID: 817737507}
   character: {fileID: 1002132084}
   MJoy: {fileID: 1799517994}
@@ -11631,6 +11631,7 @@ Transform:
   - {fileID: 1617972490}
   - {fileID: 1252667104}
   - {fileID: 534483079}
+  - {fileID: 248660351}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -19,6 +19,7 @@ TagManager:
   - Bag
   - EnterPharmacy
   - EnterMart
+  - MilitaryCar
   layers:
   - Default
   - TransparentFX
