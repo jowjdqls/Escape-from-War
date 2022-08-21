@@ -179,25 +179,20 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        //float h = Input.GetAxisRaw("Horizontal");
-        //rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
         float MainX = MJoy.Horizontal;
 
         moveVec = new Vector2(MainX, 0) * maxSpeed * Time.deltaTime;
         rigid.MovePosition(rigid.position + moveVec);
 
-        if(moveVec.sqrMagnitude == 0)
-            return;
+        if(moveVec != Vector2.right)
+            spriteRenderer.flipX = MJoy.Horizontal == -1;
 
-    
-
-        //transform.Translate(new Vector2(MainX, 0) * maxSpeed * Time.deltaTime);
-
-        //if (rigid.velocity.x > maxSpeed)
-          //  rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        //else if (rigid.velocity.x < maxSpeed * -1)
-          //  rigid.velocity = new Vector2(maxSpeed * -1, rigid.velocity.y);
+        if(moveVec != Vector2.zero)
+            anim.SetBool("isWalking", true);
+        else
+            anim.SetBool("isWalking", false);
+        
     }
 
     public void stopGame()
@@ -214,17 +209,6 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
-        if(Input.GetButton("Horizontal"))
-        {
-            spriteRenderer.flipX = (Input.GetAxisRaw("Horizontal") == -1);
-        }
-
-        if(Input.GetButtonUp("Horizontal"))
-        {
-            rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
-        }
-
-      
         if(Mathf.Abs(rigid.velocity.x) < 0.3)
             anim.SetBool("isWalking", false);
         else
@@ -505,19 +489,19 @@ public class PlayerMove : MonoBehaviour
         
         if(curWa >= 75)
         {
-            curWa -= 0.006f;
+            curWa -= 0.008f;
         }
         else if(curWa >= 50)
         {
-            curWa -= 0.009f;
+            curWa -= 0.01f;
         }
         else if(curWa >= 25)
         {
-            curWa -= 0.012f;
+            curWa -= 0.013f;
         }
         else if(curWa >= 0)
         {
-            curWa -= 0.013f;
+            curWa -= 0.015f;
         }
 
         if(50 >= curhu && curWa >= 25)

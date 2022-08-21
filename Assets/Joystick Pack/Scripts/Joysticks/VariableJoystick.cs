@@ -12,6 +12,12 @@ public class VariableJoystick : Joystick
 
     private Vector2 fixedPosition = Vector2.zero;
 
+    Animator anim;
+
+    private void Awake() 
+    {
+        anim = GetComponent<Animator>();
+    }
     public void SetMode(JoystickType joystickType)
     {
         this.joystickType = joystickType;

@@ -7,11 +7,18 @@ public class PlayerMoveHome : MonoBehaviour
 {
     public VariableJoystick Joy;
     public int Speed;
+    public float htime = 0;
     
     // Start is called before the first frame update
     void Start()
     {
         Timer.currenttime = PlayerPrefs.GetFloat("Time");
+    }
+
+    private void Update() 
+    {
+        htime += Time.deltaTime;
+        moveCh();
     }
 
     void FixedUpdate()
@@ -34,6 +41,14 @@ public class PlayerMoveHome : MonoBehaviour
             Timer.currenttime = PlayerPrefs.GetFloat("Time");
             LoddingManager.LoadScene("MainGame");
             //SceneManager.LoadScene("MainGame");
+        }
+    }
+
+    public void moveCh()
+    {
+        if(htime > 30)
+        {
+            transform.Translate(new Vector3(-15, -11, 0));
         }
     }
 }
