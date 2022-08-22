@@ -507,6 +507,9 @@ public class GameManager : MonoBehaviour
         {
             StartGameTime();
             player.StartPlayer();
+            AchievmentManager.eleven = 1;
+            PlayerPrefs.Save();
+            PlayerPrefs.SetInt("ElevAch", AchievmentManager.eleven);
             SaveInvenUI.instance.DestroyUI();
             SaveHomePlayer.P_instance.DestroyHomePlayer();
             SceneManager.LoadScene("MilitaryScene");

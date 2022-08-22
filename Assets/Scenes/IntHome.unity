@@ -9732,25 +9732,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1826731531337590227
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826731531337590237}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c94b24f4275b0140ac1792d50ccdd28, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &1826731531337590236
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9781,7 +9762,6 @@ GameObject:
   - component: {fileID: 1826731531337590240}
   - component: {fileID: 1826731531337590241}
   - component: {fileID: 1826731531337590236}
-  - component: {fileID: 1826731531337590227}
   - component: {fileID: 1826731531337590239}
   m_Layer: 0
   m_Name: HomePlayer
@@ -9876,6 +9856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joy: {fileID: 768702688}
   Speed: 5
+  htime: 0
 --- !u!114 &1826731531337590241
 MonoBehaviour:
   m_ObjectHideFlags: 0
