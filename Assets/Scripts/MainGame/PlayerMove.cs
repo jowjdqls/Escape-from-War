@@ -186,12 +186,14 @@ public class PlayerMove : MonoBehaviour
         rigid.MovePosition(rigid.position + moveVec);
 
         if(moveVec != Vector2.right)
-            spriteRenderer.flipX = MJoy.Horizontal == -1;
+            spriteRenderer.flipX = MJoy.Horizontal < 0;
 
-        if(moveVec != Vector2.zero)
-            anim.SetBool("isWalking", true);
+        if(MainX != 0)
+            anim.SetBool("ismove", true);
         else
-            anim.SetBool("isWalking", false);
+            anim.SetBool("ismove", false);
+
+        anim.SetFloat("InputX", MainX);
         
     }
 
@@ -209,10 +211,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
-        if(Mathf.Abs(rigid.velocity.x) < 0.3)
-            anim.SetBool("isWalking", false);
-        else
-            anim.SetBool("isWalking", true);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
