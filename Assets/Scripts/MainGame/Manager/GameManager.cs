@@ -464,6 +464,9 @@ public class GameManager : MonoBehaviour
     {
         MartText.SetActive(false);
         UImart.SetActive(true);
+        AchievmentManager.twelve = 1;
+        PlayerPrefs.SetInt("TwelAch", AchievmentManager.twelve);
+        PlayerPrefs.Save();
     }
 
     public void IntMartNo()
