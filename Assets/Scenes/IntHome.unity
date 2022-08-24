@@ -5622,8 +5622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EscUI: {fileID: 1189100478}
-  TimeUI1: {fileID: 1908800962}
-  TimeUI2: {fileID: 1484048163}
+  TimeUI1: {fileID: 1484048163}
+  TimeUI2: {fileID: 1908800962}
 --- !u!4 &1354210459
 Transform:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class HomeManager : MonoBehaviour
         HomeTime = 0;
         TimeUI1.SetActive(false);
         TimeUI2.SetActive(false);
+        Invoke("Wait10sec", 10f);
+        Invoke("wait20sec", 20f);
     }
 
     public void Update()
@@ -85,5 +87,15 @@ public class HomeManager : MonoBehaviour
         Time.timeScale = 1;
         HomeStopGame =false;
         return;
+    }
+
+    void Wait10sec()
+    {
+        TimeUI1.SetActive(true);        
+    }
+
+    void wait20sec()
+    {
+        TimeUI2.SetActive(true);
     }
 }
