@@ -499,6 +499,8 @@ public class GameManager : MonoBehaviour
     {
         if(PlayerMove.EnterHome == 0)
         {
+            SaveInvenUI.instance.DestroyUI();
+            SaveHomePlayer.P_instance.DestroyHomePlayer();
             SceneManager.LoadScene("MilitaryScene");
             AchievmentManager.eleven = 1;
             PlayerPrefs.SetInt("ElevAch", AchievmentManager.eleven);

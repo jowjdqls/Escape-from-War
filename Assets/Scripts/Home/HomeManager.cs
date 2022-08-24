@@ -11,9 +11,14 @@ public class HomeManager : MonoBehaviour
 
     public GameObject EscUI;
 
+    public GameObject TimeUI1;
+    public GameObject TimeUI2;
+
     public void Start()
     {
         HomeTime = 0;
+        TimeUI1.SetActive(false);
+        TimeUI2.SetActive(false);
     }
 
     public void Update()

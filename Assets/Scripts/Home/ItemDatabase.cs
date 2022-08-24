@@ -15,17 +15,17 @@ public class ItemDatabase : MonoBehaviour
     }
 
     public List<Item> itemDB = new List<Item>();
-    [Space(20)]
+    [Space(14)]
     public GameObject fieldItemPrefab;
     public Vector3[] pos;
 
     private void Start()
     {
         var used = new List<int>();
-        for(int i = 0; i < 21; i++)
+        for(int i = 0; i < 14; i++)
         {
             GameObject go = Instantiate(fieldItemPrefab, pos[i], Quaternion.identity);
-            var index = randomExcept(20, used);
+            var index = randomExcept(14, used);
             used.Add(index);
             go.GetComponent<FieldItems>().SetItem(itemDB[index]);
         }
