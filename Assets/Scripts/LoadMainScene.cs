@@ -14,6 +14,7 @@ public class LoadMainScene : MonoBehaviour
     public GameObject UInextBtu2;
     public GameObject UIbackBtu;
     public GameObject UIbackBtu2;
+    public int FirstPlay = 1;
 
     public void Start()
     {
@@ -22,7 +23,7 @@ public class LoadMainScene : MonoBehaviour
         UInextBtu.SetActive(false);
         UIbackBtu.SetActive(false);
         UIcloseBtu.SetActive(false);
-        IntroManager.FirstPlay = PlayerPrefs.GetInt("FirstP");
+        PlayerPrefs.GetInt("FirstP", FirstPlay);
     }
 
     public void help()
@@ -83,14 +84,18 @@ public class LoadMainScene : MonoBehaviour
 
     public void Load()
     {
-        SceneManager.LoadScene("IntroScene");
-        if(IntroManager.FirstPlay == 1)
+        if(FirstPlay == 1)
         {
-            LoddingManager.LoadScene("IntroScene");;
+            FirstPlay -= 1;
+            PlayerPrefs.SetInt("FirstP", FirstPlay);
+            PlayerPrefs.Save();
+            LoddingManager.LoadScene("IntroScene");
+            print("Introooooooooo");
         }
-        else if(IntroManager.FirstPlay <= 0)
+        else if(FirstPlay <= 0)
         {
-            LoddingManager.LoadScene("MainGame"); 
+            LoddingManager.LoadScene("MainGame");
+            print("start");
         }
         PlayerMove.EnterHome = 0;
         Timer.currenttime = 0;
