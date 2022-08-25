@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LoadMainScene : MonoBehaviour
 {
-    public GameObject UIBackGround;
     public GameObject UIImagefirst;
     public GameObject UIImageSecond;
+    public GameObject UIImagethird;
     public GameObject UIcloseBtu;
     public GameObject UInextBtu;
+    public GameObject UInextBtu2;
     public GameObject UIbackBtu;
+    public GameObject UIbackBtu2;
 
     public void Start()
     {
-        UIBackGround.SetActive(false);
         UIImagefirst.SetActive(false);
         UIImageSecond.SetActive(false);
         UInextBtu.SetActive(false);
@@ -26,7 +27,6 @@ public class LoadMainScene : MonoBehaviour
 
     public void help()
     {
-        UIBackGround.SetActive(true);
         UIImagefirst.SetActive(true);
         UInextBtu.SetActive(true);
         UIcloseBtu.SetActive(true);
@@ -35,28 +35,51 @@ public class LoadMainScene : MonoBehaviour
     public void closehelp()
     {
         UIImagefirst.SetActive(false);
-        UIBackGround.SetActive(false);
         UIImageSecond.SetActive(false);
+        UIImagethird.SetActive(false);
         UInextBtu.SetActive(false);
+        UInextBtu2.SetActive(false);
         UIbackBtu.SetActive(false);
+        UIbackBtu2.SetActive(false);
         UIcloseBtu.SetActive(false);
     }
 
-    public void nexthelp()
+    public void nextone()
     {
         UIImageSecond.SetActive(true);
-        UInextBtu.SetActive(false);
+        UInextBtu2.SetActive(true);
         UIbackBtu.SetActive(true);
         UIImagefirst.SetActive(false);
+        UInextBtu.SetActive(false);
     }
 
-    public void backhelp()
+    public void nexttwo()
     {
+        UIImagethird.SetActive(true);
+        UIbackBtu2.SetActive(true);
         UIImageSecond.SetActive(false);
-        UInextBtu.SetActive(true);
-        UIbackBtu.SetActive(false);
-        UIImagefirst.SetActive(true);
+        UInextBtu2.SetActive(false);
     }
+
+    public void Backone()
+    {
+        UIImagefirst.SetActive(true);
+        UInextBtu.SetActive(true);
+        UIImageSecond.SetActive(false);
+        UIbackBtu.SetActive(false);
+        UInextBtu2.SetActive(false);
+    }
+
+    public void Backtwo()
+    {
+        UIImagethird.SetActive(false);
+        UIbackBtu2.SetActive(false);
+        UIImageSecond.SetActive(true);
+        UInextBtu2.SetActive(true);
+        UIbackBtu.SetActive(true);
+    }
+
+
 
     public void Load()
     {

@@ -51,6 +51,7 @@ public class PlayerMoveHome : MonoBehaviour
         {
             Timer.currenttime = PlayerPrefs.GetFloat("Time");
             LoddingManager.LoadScene("MainGame");
+            transform.Translate(new Vector3(-15, -11, 0));
             //SceneManager.LoadScene("MainGame");
         }
     }

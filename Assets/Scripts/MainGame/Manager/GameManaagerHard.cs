@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManaagerHard : MonoBehaviour
 {
     public GameObject[] Stages;
     public int totalPoint;
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject MilitaryText;
 
-    public PlayerMove player;
+    public PlayerMoveHard playerhard;
 
     public static bool StopGame;
 
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         {
             UIesctext.SetActive(true);
             StopGameTime();
-            player.StopPlayer();
+            playerhard.StopPlayer();
         }
     }
 
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
             stageIndex++;
             Stages[stageIndex].SetActive(true);
 
-            player.respown();
+            playerhard.respown();
         }
     }
 
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
     {
         UIesctext.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void escMenu()
@@ -157,13 +157,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetFloat("Time", Timer.currenttime);
             PlayerPrefs.Save();
             StartGameTime();
-            player.StartPlayer();
+            playerhard.StartPlayer();
         }
         else if(PlayerMove.EnterHome == 0)
         {
             SceneManager.LoadScene("IntScene");
             StartGameTime();
-            player.StartPlayer();
+            playerhard.StartPlayer();
             Timer.currenttime = 0;
             PlayerPrefs.SetFloat("Time", Timer.currenttime);
             PlayerPrefs.Save();
@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
             SaveHomePlayer.P_instance.DestroyHomePlayer();
             SceneManager.LoadScene("MainGame");
             StartGameTime();
-            player.StartPlayer();
+            playerhard.StartPlayer();
             Timer.currenttime = 0;
             PlayerMove.EnterHome = 0;
             PlayerPrefs.SetFloat("Time", Timer.currenttime);
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("MainGame");
             StartGameTime();
-            player.StartPlayer();
+            playerhard.StartPlayer();
             Timer.currenttime = 0;
             PlayerPrefs.SetFloat("Time", Timer.currenttime);
             PlayerPrefs.Save();
@@ -214,24 +214,24 @@ public class GameManager : MonoBehaviour
 
     public void OnBoxYes()
     {
-        player.noPlayer();
+        playerhard.noPlayer();
         UIBoxText.SetActive(false);
         UIoutBox.SetActive(true);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void OnBoxNo()
     {
         UIBoxText.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void OutBox()
     {
         UIoutBox.SetActive(false);
-        player.yesPlayer();
+        playerhard.yesPlayer();
     }
 
     //배식 텍스트
@@ -249,7 +249,7 @@ public class GameManager : MonoBehaviour
     {
         UITentNoGet.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void OnTentYes()
@@ -258,15 +258,15 @@ public class GameManager : MonoBehaviour
         PlayerMove.curhu += 50;
         PlayerMove.curWa += 50;
         StartGameTime();
-        player.StartPlayer();
-        player.Gettent -= 1;
+        playerhard.StartPlayer();
+        playerhard.Gettent -= 1;
     }
 
     public void OnTentNo()
     {
         UITentText.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     //병원
@@ -279,7 +279,7 @@ public class GameManager : MonoBehaviour
     {
         UIHospitalText.SetActive(false);
         UIHospitalEnter.SetActive(true);
-        player.GetHospital -= 1;
+        playerhard.GetHospital -= 1;
     }
 
     public void OnHospitalEnt()
@@ -291,9 +291,9 @@ public class GameManager : MonoBehaviour
     {
         UIHospitalEnter.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
         PlayerMove.curHp += 70;
-        player.HospitalP -= 1;
+        playerhard.HospitalP -= 1;
         if(AchievmentManager.two == 0)
         {
             AchievmentManager.two ++;
@@ -310,7 +310,7 @@ public class GameManager : MonoBehaviour
     {
         UIHospitalEnter.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void OnHospitalNoEnt()
@@ -322,31 +322,31 @@ public class GameManager : MonoBehaviour
     {
         UIHospitalNoEnt.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     //역 들어가기
     public void IntStation()
     {
-        player.offCharacter();
+        playerhard.offCharacter();
         UIEnterStation.SetActive(false);
         UIExitStation.SetActive(true);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void IntStationNo()
     {
         UIEnterStation.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void ExitStation()
     {
-        player.Oncharacter();
+        playerhard.Oncharacter();
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
         UIExitStation.SetActive(false);
     }
 
@@ -365,18 +365,18 @@ public class GameManager : MonoBehaviour
     {
         NoCarKey.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void IntCarYes()
     {
-        player.offCharacter();
+        playerhard.offCharacter();
         UIUseCar.SetActive(false);
         UIArmy.SetActive(true);
         UIArmyTalk.SetActive(true);
         Armybtu.SetActive(true);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
         if(AchievmentManager.one == 0)
         {
             AchievmentManager.one++;
@@ -393,7 +393,7 @@ public class GameManager : MonoBehaviour
     {
         UIUseCar.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void IntCarYesAnswer()
@@ -403,14 +403,14 @@ public class GameManager : MonoBehaviour
         UIArmyTalk.SetActive(false);
         CarObj.SetActive(false);
         Armybtu.SetActive(false);
-        player.Oncharacter();
+        playerhard.Oncharacter();
     }
 
     public void Escbtu()
     {
         UIesctext.SetActive(true);
         StopGameTime();
-        player.StopPlayer();
+        playerhard.StopPlayer();
     }
 
     //약국 들어가기
@@ -424,7 +424,7 @@ public class GameManager : MonoBehaviour
     {
         UInomoney.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
     public void IntPharmacy()
     {
@@ -444,14 +444,14 @@ public class GameManager : MonoBehaviour
     {
         pharmacyText.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void BackPharmacy()
     {
         UIpharmacy.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     //마트 들어가기
@@ -473,14 +473,14 @@ public class GameManager : MonoBehaviour
     {
         MartText.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void BackMart()
     {
         UImart.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void MeetMilitaryCar()
@@ -492,7 +492,7 @@ public class GameManager : MonoBehaviour
     {
         MilitaryText.SetActive(false);
         StartGameTime();
-        player.StartPlayer();
+        playerhard.StartPlayer();
     }
 
     public void militaryYes()
@@ -504,12 +504,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("ElevAch", AchievmentManager.eleven);
             PlayerPrefs.Save();
             StartGameTime();
-            player.StartPlayer();
+            playerhard.StartPlayer();
         }
         else if(PlayerMove.EnterHome == 1)
         {
             StartGameTime();
-            player.StartPlayer();
+            playerhard.StartPlayer();
             AchievmentManager.eleven = 1;
             PlayerPrefs.Save();
             PlayerPrefs.SetInt("ElevAch", AchievmentManager.eleven);

@@ -3,21 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMoveHard : MonoBehaviour
 {
     [SerializeField]
     public Slider hpbar;
-    public Slider hugrybar;
-    public Slider waterbar;
 
     public static float maxHp = 100;
     public static float curHp = 100;
-    public static float maxhu = 100;
-    public static float curhu = 100;
-    public static float maxWa = 100;
-    public static float curWa = 100;
 
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -63,13 +56,7 @@ public class PlayerMove : MonoBehaviour
     {
         maxHp = 100;
         curHp = 100;
-        maxHp = 100;
-        curhu = 100;
-        maxWa = 100;
-        curWa = 100;
         hpbar.value = (float) curHp / (float) maxHp;  
-        hugrybar.value = (float) curhu / (float) maxhu;
-        waterbar.value = (float) curWa / (float) maxWa;
     }
 
     void Update()
@@ -159,15 +146,8 @@ public class PlayerMove : MonoBehaviour
             StopPlayer();
         }
 
-        if(curhu <= 0 && curWa <= 0)
-        {
-            AchievmentManager.four = 1;
-            PlayerPrefs.SetInt("FourAch", AchievmentManager.four);
-            PlayerPrefs.Save();
-        }
 
         DonotAttack();
-        HpManager();
         Die();
         HandleHp();
         MaXStat();
@@ -320,12 +300,12 @@ public class PlayerMove : MonoBehaviour
 
     public void StopPlayer()
     {
-        gameObject.GetComponent<PlayerMove>().enabled = false;
+        gameObject.GetComponent<PlayerMoveHard>().enabled = false;
     }
 
     public void StartPlayer()
     {
-        gameObject.GetComponent<PlayerMove>().enabled = true;
+        gameObject.GetComponent<PlayerMoveHard>().enabled = true;
     }
 
     public void noPlayer()
@@ -367,8 +347,6 @@ public class PlayerMove : MonoBehaviour
     private void HandleHp()
     {
         hpbar.value = (float)curHp / (float)maxHp;
-        hugrybar.value = (float)curhu / (float)maxhu;
-        waterbar.value = (float) curWa / (float) maxWa;
     }
 
     public void Die()
@@ -419,17 +397,9 @@ public class PlayerMove : MonoBehaviour
 
     public void MaXStat()
     {
-        if(curHp > maxHp)
+        if(curHp > 100)
         {
-            curHp = maxHp;
-        }
-        if(curhu > 100)
-        {
-            curhu = 100;
-        }
-        if(curWa > 100)
-        {
-            curWa = 100;
+            curHp = 100;
         }
     }
 
@@ -467,53 +437,4 @@ public class PlayerMove : MonoBehaviour
         }
     }
     
-    public void HpManager()
-    {
-        if(curhu >= 75)
-        {
-            curhu -= 0.006f;
-        }
-        else if(curhu >= 50)
-        {
-            curhu -= 0.009f;
-        }
-        else if(curhu >= 25)
-        {
-            curhu -= 0.012f;
-        }
-        else if(curhu >= 0)
-        {
-            curhu -= 0.013f;
-        }
-        
-        if(curWa >= 75)
-        {
-            curWa -= 0.008f;
-        }
-        else if(curWa >= 50)
-        {
-            curWa -= 0.01f;
-        }
-        else if(curWa >= 25)
-        {
-            curWa -= 0.013f;
-        }
-        else if(curWa >= 0)
-        {
-            curWa -= 0.015f;
-        }
-
-        if(50 >= curhu && curWa >= 25)
-        {
-            curHp -= 0.005f;
-        }
-        else if(25 >= curhu && curWa > 0)
-        {
-            curHp -= 0.008f;
-        }
-        else if(curhu <= 0 && curWa <=0)
-        {
-            curHp -= 0.01f;
-        }
-    }
 }
