@@ -74,8 +74,38 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        Move();
+        ClickBtu();
+        DonotAttack();
+        HpManager();
+        Die();
+        HandleHp();
+        MaXStat();
+        HealTentPoint();
+        HealTentUp();
+        HealHospitalP();
+        HealHospitalPUP();
+    }
 
+    void FixedUpdate()
+    {
+        float MainX = MJoy.Horizontal;
+
+        moveVec = new Vector2(MainX, 0) * maxSpeed * Time.deltaTime;
+        rigid.MovePosition(rigid.position + moveVec);
+
+        if(moveVec != Vector2.right)
+            spriteRenderer.flipX = MJoy.Horizontal < 0;
+
+        if(MainX != 0)
+            anim.SetBool("ismove", true);
+        else
+            anim.SetBool("ismove", false);
+
+        anim.SetFloat("InputX", MainX);
+    }
+
+    public void ClickBtu()
+    {
         if(onStay && BtuDown)
         {
             gameManager.Ontext();
@@ -132,7 +162,6 @@ public class PlayerMove : MonoBehaviour
             StopPlayer();
         }
 
-        //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         if(Onpharmacy && BtuDown && GameManager.WalletP == 1)
         {
             gameManager.IntPharmacy();
@@ -165,36 +194,6 @@ public class PlayerMove : MonoBehaviour
             PlayerPrefs.SetInt("FourAch", AchievmentManager.four);
             PlayerPrefs.Save();
         }
-
-        DonotAttack();
-        HpManager();
-        Die();
-        HandleHp();
-        MaXStat();
-        HealTentPoint();
-        HealTentUp();
-        HealHospitalP();
-        HealHospitalPUP();
-    }
-
-    void FixedUpdate()
-    {
-
-        float MainX = MJoy.Horizontal;
-
-        moveVec = new Vector2(MainX, 0) * maxSpeed * Time.deltaTime;
-        rigid.MovePosition(rigid.position + moveVec);
-
-        if(moveVec != Vector2.right)
-            spriteRenderer.flipX = MJoy.Horizontal < 0;
-
-        if(MainX != 0)
-            anim.SetBool("ismove", true);
-        else
-            anim.SetBool("ismove", false);
-
-        anim.SetFloat("InputX", MainX);
-        
     }
 
     public void stopGame()
@@ -207,11 +206,6 @@ public class PlayerMove : MonoBehaviour
     {
         gameManager.StartGameTime();
         StartPlayer();
-    }
-
-    public void Move()
-    {
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

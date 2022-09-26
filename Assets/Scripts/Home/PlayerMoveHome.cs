@@ -26,9 +26,6 @@ public class PlayerMoveHome : MonoBehaviour
 
     void FixedUpdate()
     {
-        //float inputX = Input.GetAxisRaw("Horizontal");
-        //float inputY = Input.GetAxisRaw("Vertical");
-
         float x = Joy.Horizontal;
         float y = Joy.Vertical;
 
@@ -41,8 +38,6 @@ public class PlayerMoveHome : MonoBehaviour
         anim.SetFloat("InputY", y);
 
         transform.Translate(new Vector2(x, y) * Speed * Time.deltaTime);
-
-        //transform.Translate(new Vector2(inputX, inputY) * Time.deltaTime * Speed);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -52,7 +47,6 @@ public class PlayerMoveHome : MonoBehaviour
             Timer.currenttime = PlayerPrefs.GetFloat("Time");
             LoddingManager.LoadScene("MainGame");
             transform.Translate(new Vector3(-15, -11, 0));
-            //SceneManager.LoadScene("MainGame");
         }
     }
 

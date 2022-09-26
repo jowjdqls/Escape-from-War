@@ -80,7 +80,6 @@ public class GameManager : MonoBehaviour
     {
         totalPoint += stagePoint;
         stagePoint = 0;
-        
 
         if (stageIndex == Stages.Length - 1)
         {

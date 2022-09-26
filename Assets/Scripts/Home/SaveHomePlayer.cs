@@ -8,7 +8,6 @@ public class SaveHomePlayer : MonoBehaviour
     
     void Awake() 
     {
-        //DontDestroyOnLoad(this.gameObject);
         if (P_instance)
         {
             DestroyImmediate(this.gameObject);
